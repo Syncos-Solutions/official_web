@@ -9,7 +9,7 @@ const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
   title: "Syncos Solutions - Elevate Your Workflow",
-  description: "The all-in-one that helps teams collaborate, automate, and deliver exceptional results.",
+  description: "We engineer high-performance IT systems, automate processes, and simplify technology — so you can focus on what matters most: growth.",
 }
 
 export default function RootLayout({
