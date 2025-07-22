@@ -8,8 +8,8 @@ import { ThemeProvider } from "../components/theme-provider"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "SaaSify - Elevate Your Workflow",
-  description: "The all-in-one platform that helps teams collaborate, automate, and deliver exceptional results.",
+  title: "Syncos Solutions - Elevate Your Workflow",
+  description: "The all-in-one that helps teams collaborate, automate, and deliver exceptional results.",
 }
 
 export default function RootLayout({
