@@ -101,6 +101,7 @@ export default function LandingPage() {
     description: "Our expert engineers are available around the clock to help you solve issues, optimize systems, and keep things running.",
       icon: <Star className="size-5" />,
     },
+  
   ]
 
   return (
@@ -109,11 +110,11 @@ export default function LandingPage() {
         className={`sticky top-0 z-50 w-full backdrop-blur-lg transition-all duration-300 ${isScrolled ? "bg-background/80 shadow-sm" : "bg-transparent"}`}
       >
         <div className="container flex h-16 items-center justify-between">
-          <div className="flex items-center gap-2 font-bold">
-            <div className="size-8 rounded-lg bg-gradient-to-br from-primary to-primary/70 flex items-center justify-center text-primary-foreground">
+          <div className="flex items-center gap-2 font-medium ">
+            {/* <div className="size-8 rounded-lg bg-gradient-to-br from-primary to-primary/70 flex items-center justify-center text-primary-foreground">
               {/* <Image src="" /> */}
-            </div>
-            <span>Syncos Solutions</span>
+            {/* </div> */} 
+            <span >Syncos Solutions</span>
           </div>
           <nav className="hidden md:flex gap-8">
             <Link
@@ -212,8 +213,8 @@ export default function LandingPage() {
       </header>
       <main className="flex-1">
         {/* Hero Section */}
-        <section className="w-full py-20 md:py-32 lg:py-40 overflow-hidden">
-          <div className="container px-4 md:px-6 relative">
+        <section className="w-full py-20 md:py-30 lg:py-30 overflow-hidden">
+          <div className="container px-3 md:px-6 relative">
             <div className="absolute inset-0 -z-10 h-full w-full bg-white dark:bg-black bg-[linear-gradient(to_right,#f0f0f0_1px,transparent_1px),linear-gradient(to_bottom,#f0f0f0_1px,transparent_1px)] dark:bg-[linear-gradient(to_right,#1f1f1f_1px,transparent_1px),linear-gradient(to_bottom,#1f1f1f_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_110%)]"></div>
 
             <motion.div
@@ -222,9 +223,9 @@ export default function LandingPage() {
               transition={{ duration: 0.5 }}
               className="text-center max-w-3xl mx-auto mb-12"
             >
-              <Badge className="mb-4 rounded-full px-4 py-1.5 text-sm font-medium" variant="secondary">
+              {/* <Badge className="mb-4 rounded-full px-4 py-1.5 text-sm font-medium" variant="secondary">
                 🚀 Get Started Now
-              </Badge>
+              </Badge> */}
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6 bg-clip-text text-transparent bg-gradient-to-r from-foreground to-foreground/70">
                 Reliable. Secure. Tailored IT services that drive real results.
               </h1>
@@ -298,10 +299,10 @@ export default function LandingPage() {
       transition={{ duration: 0.6 }}
       className="text-center mb-16"
     >
-      <Badge className="mb-4 rounded-full px-6 py-2 text-sm font-medium bg-primary/10 text-primary border-primary/20" variant="outline">
-        About Syncos Solutions
-      </Badge>
-      <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-6 bg-clip-text text-transparent bg-gradient-to-r from-foreground via-primary to-foreground">
+      <Badge className="mb-5 rounded-full px-4 py-1.5 text-sm font-medium" variant="secondary">
+                About Us
+              </Badge>
+      <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-10 bg-clip-text text-transparent bg-gradient-to-r from-foreground via-primary to-foreground">
         Innovating Tomorrow's Technology Today
       </h2>
       <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
@@ -639,8 +640,222 @@ export default function LandingPage() {
           </div>
         </section>
 
+{/* Home Page Blog Section - Navigate to Separate Blog Page */}
+      <section id="blog" className="w-full py-20 md:py-32">
+  <div className="container px-4 md:px-6">
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.5 }}
+      className="flex flex-col items-center justify-center space-y-4 text-center mb-12"
+    >
+      <Badge className="rounded-full px-4 py-1.5 text-sm font-medium" variant="secondary">
+        📚 Latest Insights
+      </Badge>
+      <h2 className="text-3xl md:text-4xl font-bold tracking-tight">Tech Insights & Industry Updates</h2>
+      <p className="max-w-[800px] text-muted-foreground md:text-lg">
+        Stay ahead with the latest trends, best practices, and expert insights from our team of technology specialists.
+      </p>
+    </motion.div>
+
+    {/* Featured Blog Posts - First 3 */}
+    <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 mb-12">
+      {[
+        {
+          slug: "devops-automation-2024",
+          title: "The Future of DevOps: Automation Trends in 2024",
+          excerpt: "Discover how AI-powered automation and GitOps are revolutionizing software delivery pipelines and reducing deployment risks.",
+          category: "DevOps",
+          readTime: "5 min read",
+          date: "Dec 15, 2024",
+          author: {
+            name: "Alex Kumar",
+            role: "Senior DevOps Engineer",
+            avatar: "AK"
+          },
+          featured: true
+        },
+        {
+          slug: "cloud-security-enterprise",
+          title: "Cloud Security Best Practices for Enterprise",
+          excerpt: "Essential security frameworks and compliance strategies to protect your cloud infrastructure from emerging threats.",
+          category: "Security",
+          readTime: "7 min read", 
+          date: "Dec 12, 2024",
+          author: {
+            name: "Sarah Chen", 
+            role: "Security Specialist",
+            avatar: "SC"
+          }
+        },
+        {
+          slug: "kubernetes-vs-docker-swarm",
+          title: "Kubernetes vs. Docker Swarm: A 2024 Comparison",
+          excerpt: "An in-depth analysis of container orchestration platforms to help you choose the right solution for your infrastructure.",
+          category: "Infrastructure",
+          readTime: "6 min read",
+          date: "Dec 10, 2024", 
+          author: {
+            name: "Mike Rodriguez",
+            role: "Infrastructure Architect", 
+            avatar: "MR"
+          }
+        }
+      ].map((blog, i) => (
+        <motion.div
+          key={i}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: i * 0.05 }}
+        >
+          <Card className="h-full overflow-hidden border-border/40 bg-gradient-to-b from-background to-muted/10 backdrop-blur transition-all hover:shadow-md group cursor-pointer">
+            <CardContent className="p-6 flex flex-col h-full">
+              <div className="flex items-center justify-between mb-4">
+                <div className="flex items-center gap-2">
+                  <span className="px-2 py-1 text-xs font-medium bg-primary/10 text-primary rounded-full">
+                    {blog.category}
+                  </span>
+                  {blog.featured && (
+                    <span className="px-2 py-1 text-xs font-medium bg-yellow-100 dark:bg-yellow-900/30 text-yellow-700 dark:text-yellow-300 rounded-full flex items-center gap-1">
+                      <Star className="w-3 h-3 fill-current" />
+                      Featured
+                    </span>
+                  )}
+                </div>
+                <span className="text-xs text-muted-foreground">{blog.readTime}</span>
+              </div>
+
+              <h3 className="text-xl font-bold mb-3 flex-grow group-hover:text-primary transition-colors duration-300">
+                {blog.title}
+              </h3>
+              
+              <p className="text-muted-foreground mb-6 leading-relaxed">
+                {blog.excerpt}
+              </p>
+              
+              <div className="mb-4">
+                <Link href={`/blog/${blog.slug}`}>
+                  <Button 
+                    variant="outline" 
+                    size="sm" 
+                    className="w-full rounded-full group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300"
+                  >
+                    <span className="flex items-center gap-2">
+                      Read Full Article
+                      <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
+                    </span>
+                  </Button>
+                </Link>
+              </div>
+
+              <div className="flex items-center justify-between mt-auto pt-4 border-t border-border/40">
+                <div className="flex items-center gap-3">
+                  <div className="size-10 rounded-full bg-primary/10 flex items-center justify-center text-primary font-medium text-sm">
+                    {blog.author.avatar}
+                  </div>
+                  <div>
+                    <p className="font-medium text-sm">{blog.author.name}</p>
+                    <p className="text-xs text-muted-foreground">{blog.author.role}</p>
+                  </div>
+                </div>
+                <div className="text-right">
+                  <p className="text-xs text-muted-foreground">{blog.date}</p>
+                  <div className="flex items-center gap-1 mt-1">
+                    <div className="w-1.5 h-1.5 rounded-full bg-green-500"></div>
+                    <span className="text-xs text-muted-foreground">Published</span>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </motion.div>
+      ))}
+    </div>
+
+    {/* Call to Action - Navigate to Blog Page */}
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.6, delay: 0.3 }}
+      className="text-center"
+    >
+      <Card className="inline-block p-8 border-border/40 bg-gradient-to-r from-background to-muted/20 backdrop-blur-sm">
+        <CardContent className="p-0 space-y-6">
+          <div className="space-y-2">
+            <h3 className="text-2xl font-bold text-foreground">Explore Our Complete Blog</h3>
+            <p className="text-muted-foreground max-w-md mx-auto">
+              Discover more in-depth tutorials, case studies, and technical insights from our engineering team.
+            </p>
+          </div>
+          
+          {/* <div className="grid grid-cols-3 gap-6 py-4 border-y border-border/40">
+            <div className="text-center">
+              <div className="text-2xl font-bold text-primary">50+</div>
+              <div className="text-sm text-muted-foreground">Articles</div>
+            </div>
+            <div className="text-center">
+              <div className="text-2xl font-bold text-primary">10k+</div>
+              <div className="text-sm text-muted-foreground">Readers</div>
+            </div>
+            <div className="text-center">
+              <div className="text-2xl font-bold text-primary">Weekly</div>
+              <div className="text-sm text-muted-foreground">Updates</div>
+            </div>
+          </div> */}
+          
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link href="/blog">
+              <Button 
+                size="lg" 
+                className="rounded-full h-12 px-8 bg-primary hover:bg-primary/90 text-primary-foreground group"
+              >
+                <span className="flex items-center gap-2">
+                  View All Articles
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
+                </span>
+              </Button>
+            </Link>
+            
+            <Button 
+              size="lg" 
+              variant="outline" 
+              className="rounded-full h-12 px-8 border-primary/30 hover:bg-primary/10 group"
+            >
+              <span className="flex items-center gap-2">
+                <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
+                Subscribe to Newsletter
+              </span>
+            </Button>
+          </div>
+          
+          <div className="flex items-center justify-center gap-4 text-sm text-muted-foreground">
+            <div className="flex items-center gap-2">
+              <div className="flex -space-x-2">
+                {["A", "S", "M", "L"].map((letter, i) => (
+                  <div key={i} className="w-6 h-6 rounded-full bg-primary/10 border-2 border-background flex items-center justify-center text-xs font-medium text-primary">
+                    {letter}
+                  </div>
+                ))}
+              </div>
+              <span>2,500+ subscribers</span>
+            </div>
+            <div className="flex items-center gap-1">
+              {/* <Star className="w-4 h-4 text-yellow-500 fill-yellow-500" />
+              <span>4.9/5 rating</span> */}
+            </div>
+          </div>
+        </CardContent>
+      </Card>
+    </motion.div>
+  </div>
+</section>
+   
+
         {/* Testimonials Section */}
-        <section id="testimonials" className="w-full py-20 md:py-32">
+        {/* <section id="testimonials" className="w-full py-20 md:py-32">
           <div className="container px-4 md:px-6">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -735,9 +950,9 @@ export default function LandingPage() {
               ))}
             </div>
           </div>
-        </section>
+        </section> */}
 
-        {/* Pricing Section */}
+        {/* Pricing Section
         <section id="pricing" className="w-full py-20 md:py-32 bg-muted/30 relative overflow-hidden">
           <div className="absolute inset-0 -z-10 h-full w-full bg-white dark:bg-black bg-[linear-gradient(to_right,#f0f0f0_1px,transparent_1px),linear-gradient(to_bottom,#f0f0f0_1px,transparent_1px)] dark:bg-[linear-gradient(to_right,#1f1f1f_1px,transparent_1px),linear-gradient(to_bottom,#1f1f1f_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_50%,#000_40%,transparent_100%)]"></div>
 
@@ -935,7 +1150,7 @@ export default function LandingPage() {
               </Tabs>
             </div>
           </div>
-        </section>
+        </section> */}
 
         {/* FAQ Section */}
         <section id="faq" className="w-full py-20 md:py-32">
@@ -1059,10 +1274,11 @@ export default function LandingPage() {
                 <div className="size-8 rounded-lg bg-gradient-to-br from-primary to-primary/70 flex items-center justify-center text-primary-foreground">
                   S
                 </div>
-                <span>SaaSify</span>
+                <span>Syncos Solutions</span>
               </div>
               <p className="text-sm text-muted-foreground">
-                Streamline your workflow with our all-in-one SaaS platform. Boost productivity and scale your business.
+                Your trusted IT partner for DevOps, cloud infrastructure, and smart automation.
+                We help businesses streamline, secure, and scale with expert-driven solutions.
               </p>
               <div className="flex gap-4">
                 <Link href="#" className="text-muted-foreground hover:text-foreground transition-colors">
