@@ -114,7 +114,7 @@ export default function LandingPage() {
             {/* <div className="size-8 rounded-lg bg-gradient-to-br from-primary to-primary/70 flex items-center justify-center text-primary-foreground">
               {/* <Image src="" /> */}
             {/* </div> */} 
-            <span >Syncos Solutions</span>
+            <Link href="/"><span className="cursor-pointer" >Syncos Solutions</span></Link>
           </div>
           <nav className="hidden md:flex gap-8">
             <Link
@@ -142,7 +142,7 @@ export default function LandingPage() {
               Career
             </Link>
             <Link
-              href="#faq"
+              href="/contact"
               className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
             >
               Contact Us
@@ -192,10 +192,10 @@ export default function LandingPage() {
               <Link href="#pricing" className="py-2 text-sm font-medium" onClick={() => setMobileMenuOpen(false)}>
                 About Us
               </Link>
-              <Link href="#faq" className="py-2 text-sm font-medium" onClick={() => setMobileMenuOpen(false)}>
+              <Link href="/Career" className="py-2 text-sm font-medium" onClick={() => setMobileMenuOpen(false)}>
                 Career
               </Link>
-              <Link href="#faq" className="py-2 text-sm font-medium" onClick={() => setMobileMenuOpen(false)}>
+              <Link href="/contact" className="py-2 text-sm font-medium" onClick={() => setMobileMenuOpen(false)}>
                 Contact Us
               </Link>
               <div className="flex flex-col gap-2 pt-2 border-t">
@@ -263,18 +263,16 @@ export default function LandingPage() {
               transition={{ duration: 0.7, delay: 0.2 }}
               className="relative mx-auto max-w-5xl"
             >
+
               <div className="rounded-xl overflow-hidden shadow-2xl border border-border/40 bg-gradient-to-b from-background to-muted/20">
               <iframe
                   src="https://my.spline.design/genkubgreetingrobot-tmlK71aXlgHtkIeplp1JMJDH/"
                   width={1280}
                   height={720}
                   allowFullScreen
+                  
                 />
-
-              
-  
-
-                {/* <Image
+            {/* <Image
                   src="https://cdn.dribbble.com/userupload/12302729/file/original-fa372845e394ee85bebe0389b9d86871.png?resize=1504x1128&vertical=center"
                   width={1280}
                   height={720}
@@ -312,10 +310,10 @@ export default function LandingPage() {
       <Badge className="mb-5 rounded-full px-4 py-1.5 text-sm font-medium" variant="secondary">
                 About Us
               </Badge>
-      <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-10 bg-clip-text text-transparent bg-gradient-to-r from-foreground via-primary to-foreground">
+      <h2 className="text-4xl md:text-4xl font-bold tracking-tight">
         Innovating Tomorrow's Technology Today
       </h2>
-      <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+      <p className="text-md mt-8 text-muted-foreground max-w-3xl mx-auto leading-relaxed">
         We're not just another IT company. We're visionaries, problem-solvers, and digital architects 
         crafting the future of technology solutions.
       </p>
@@ -332,16 +330,16 @@ export default function LandingPage() {
         className="space-y-8"
       >
         <div className="space-y-6">
-          <h3 className="text-3xl font-bold text-foreground">
-            Empowering Businesses Through 
-            <span className="text-primary"> Digital Excellence</span>
+          <h3 className="text-3xl md:text-4xl font-bold tracking-tight">
+            Empowering Businesses Through Digital Excellence
+            
           </h3>
-          <p className="text-lg text-muted-foreground leading-relaxed">
+          <p className="text-md text-muted-foreground leading-relaxed">
             Since our inception, Syncos Solutions has been at the forefront of technological innovation. 
             We believe that every business deserves access to cutting-edge solutions that drive growth, 
             efficiency, and success in the digital age.
           </p>
-          <p className="text-lg text-muted-foreground leading-relaxed">
+          <p className="text-md text-muted-foreground leading-relaxed">
             Our team of passionate developers, designers, and strategists work tirelessly to transform 
             complex challenges into elegant, scalable solutions that exceed expectations.
           </p>
@@ -350,8 +348,8 @@ export default function LandingPage() {
         {/* Key Stats */}
         <div className="grid grid-cols-3 gap-6 pt-8 border-t border-border/40">
           {[
-            { number: "150+", label: "Projects Delivered" },
-            { number: "50+", label: "Happy Clients" },
+            { number: "20+", label: "Projects Delivered" },
+            { number: "10+", label: "Happy Clients" },
             { number: "5+", label: "Years Experience" }
           ].map((stat, index) => (
             <motion.div
@@ -388,13 +386,13 @@ export default function LandingPage() {
             icon: <Users className="w-6 h-6" />,
             title: "Client-Centric Approach", 
             description: "Your success is our success. We work closely with you to understand your unique needs and deliver tailored solutions.",
-            gradient: "from-purple-500/20 to-pink-500/20"
+            gradient: "from-yellow-500/20 to-pink-500/20"
           },
           {
             icon: <Shield className="w-6 h-6" />,
             title: "Quality & Security",
             description: "We maintain the highest standards of quality and security in every project, ensuring your data and systems are protected.",
-            gradient: "from-green-500/20 to-emerald-500/20"
+            gradient: "from-red-500/20 to-emerald-500/20"
           }
         ].map((item, index) => (
           <motion.div
@@ -437,7 +435,7 @@ export default function LandingPage() {
             <div className="p-3 rounded-full bg-primary/10 text-primary mr-4">
               <BarChart className="w-6 h-6" />
             </div>
-            <h3 className="text-2xl font-bold text-foreground">Our Vision</h3>
+            <h3 className="text-2xl font-medium text-foreground">Our Vision</h3>
           </div>
           <p className="text-muted-foreground leading-relaxed">
             To be the leading technology partner that empowers businesses worldwide to achieve 
@@ -452,7 +450,7 @@ export default function LandingPage() {
             <div className="p-3 rounded-full bg-secondary/10 text-secondary-foreground mr-4">
               <Layers className="w-6 h-6" />
             </div>
-            <h3 className="text-2xl font-bold text-foreground">Our Mission</h3>
+            <h3 className="text-2xl font-medium text-foreground">Our Mission</h3>
           </div>
           <p className="text-muted-foreground leading-relaxed">
             To deliver exceptional technology solutions that solve real-world problems, enhance business 
@@ -470,8 +468,8 @@ export default function LandingPage() {
       transition={{ duration: 0.6, delay: 0.5 }}
       className="text-center"
     >
-      <h3 className="text-3xl font-bold mb-8 text-foreground">
-        Built on <span className="text-primary">Strong Values</span>
+      <h3 className="text-3xl md:text-4xl font-semibold tracking-tight mb-10">
+        Built on Strong Values
       </h3>
       <div className="grid md:grid-cols-4 gap-6">
         {[
@@ -561,7 +559,7 @@ export default function LandingPage() {
                 Features
               </Badge>
               <h2 className="text-3xl md:text-4xl font-bold tracking-tight">Everything You Need to Scale with Confidence</h2>
-              <p className="max-w-[800px] text-muted-foreground md:text-lg">
+              <p className="max-w-[800px] mb-20 mt-10 text-muted-foreground md:text-lg">
                 Our expert-driven services empower your team to deploy faster, automate operations, and ensure secure, scalable infrastructure that grows with your business.
               </p>
             </motion.div>
@@ -652,216 +650,216 @@ export default function LandingPage() {
 
 {/* Home Page Blog Section - Navigate to Separate Blog Page */}
       <section id="blog" className="w-full py-20 md:py-32">
-  <div className="container px-4 md:px-6">
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.5 }}
-      className="flex flex-col items-center justify-center space-y-4 text-center mb-12"
-    >
-      <Badge className="rounded-full px-4 py-1.5 text-sm font-medium" variant="secondary">
-        📚 Latest Insights
-      </Badge>
-      <h2 className="text-3xl md:text-4xl font-bold tracking-tight">Tech Insights & Industry Updates</h2>
-      <p className="max-w-[800px] text-muted-foreground md:text-lg">
-        Stay ahead with the latest trends, best practices, and expert insights from our team of technology specialists.
-      </p>
-    </motion.div>
-
-    {/* Featured Blog Posts - First 3 */}
-    <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 mb-12">
-      {[
-        {
-          slug: "devops-automation-2024",
-          title: "The Future of DevOps: Automation Trends in 2024",
-          excerpt: "Discover how AI-powered automation and GitOps are revolutionizing software delivery pipelines and reducing deployment risks.",
-          category: "DevOps",
-          readTime: "5 min read",
-          date: "Dec 15, 2024",
-          author: {
-            name: "Alex Kumar",
-            role: "Senior DevOps Engineer",
-            avatar: "AK"
-          },
-          featured: true
-        },
-        {
-          slug: "cloud-security-enterprise",
-          title: "Cloud Security Best Practices for Enterprise",
-          excerpt: "Essential security frameworks and compliance strategies to protect your cloud infrastructure from emerging threats.",
-          category: "Security",
-          readTime: "7 min read", 
-          date: "Dec 12, 2024",
-          author: {
-            name: "Sarah Chen", 
-            role: "Security Specialist",
-            avatar: "SC"
-          }
-        },
-        {
-          slug: "kubernetes-vs-docker-swarm",
-          title: "Kubernetes vs. Docker Swarm: A 2024 Comparison",
-          excerpt: "An in-depth analysis of container orchestration platforms to help you choose the right solution for your infrastructure.",
-          category: "Infrastructure",
-          readTime: "6 min read",
-          date: "Dec 10, 2024", 
-          author: {
-            name: "Mike Rodriguez",
-            role: "Infrastructure Architect", 
-            avatar: "MR"
-          }
-        }
-      ].map((blog, i) => (
-        <motion.div
-          key={i}
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: i * 0.05 }}
-        >
-          <Card className="h-full overflow-hidden border-border/40 bg-gradient-to-b from-background to-muted/10 backdrop-blur transition-all hover:shadow-md group cursor-pointer">
-            <CardContent className="p-6 flex flex-col h-full">
-              <div className="flex items-center justify-between mb-4">
-                <div className="flex items-center gap-2">
-                  <span className="px-2 py-1 text-xs font-medium bg-primary/10 text-primary rounded-full">
-                    {blog.category}
-                  </span>
-                  {blog.featured && (
-                    <span className="px-2 py-1 text-xs font-medium bg-yellow-100 dark:bg-yellow-900/30 text-yellow-700 dark:text-yellow-300 rounded-full flex items-center gap-1">
-                      <Star className="w-3 h-3 fill-current" />
-                      Featured
-                    </span>
-                  )}
-                </div>
-                <span className="text-xs text-muted-foreground">{blog.readTime}</span>
-              </div>
-
-              <h3 className="text-xl font-bold mb-3 flex-grow group-hover:text-primary transition-colors duration-300">
-                {blog.title}
-              </h3>
-              
-              <p className="text-muted-foreground mb-6 leading-relaxed">
-                {blog.excerpt}
-              </p>
-              
-              <div className="mb-4">
-                <Link href={`/blog/${blog.slug}`}>
-                  <Button 
-                    variant="outline" 
-                    size="sm" 
-                    className="w-full rounded-full group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300"
-                  >
-                    <span className="flex items-center gap-2">
-                      Read Full Article
-                      <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
-                    </span>
-                  </Button>
-                </Link>
-              </div>
-
-              <div className="flex items-center justify-between mt-auto pt-4 border-t border-border/40">
-                <div className="flex items-center gap-3">
-                  <div className="size-10 rounded-full bg-primary/10 flex items-center justify-center text-primary font-medium text-sm">
-                    {blog.author.avatar}
-                  </div>
-                  <div>
-                    <p className="font-medium text-sm">{blog.author.name}</p>
-                    <p className="text-xs text-muted-foreground">{blog.author.role}</p>
-                  </div>
-                </div>
-                <div className="text-right">
-                  <p className="text-xs text-muted-foreground">{blog.date}</p>
-                  <div className="flex items-center gap-1 mt-1">
-                    <div className="w-1.5 h-1.5 rounded-full bg-green-500"></div>
-                    <span className="text-xs text-muted-foreground">Published</span>
-                  </div>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-        </motion.div>
-      ))}
-    </div>
-
-    {/* Call to Action - Navigate to Blog Page */}
-    <motion.div
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.6, delay: 0.3 }}
-      className="text-center"
-    >
-      <Card className="inline-block p-8 border-border/40 bg-gradient-to-r from-background to-muted/20 backdrop-blur-sm">
-        <CardContent className="p-0 space-y-6">
-          <div className="space-y-2">
-            <h3 className="text-2xl font-bold text-foreground">Explore Our Complete Blog</h3>
-            <p className="text-muted-foreground max-w-md mx-auto">
-              Discover more in-depth tutorials, case studies, and technical insights from our engineering team.
-            </p>
-          </div>
-          
-          {/* <div className="grid grid-cols-3 gap-6 py-4 border-y border-border/40">
-            <div className="text-center">
-              <div className="text-2xl font-bold text-primary">50+</div>
-              <div className="text-sm text-muted-foreground">Articles</div>
-            </div>
-            <div className="text-center">
-              <div className="text-2xl font-bold text-primary">10k+</div>
-              <div className="text-sm text-muted-foreground">Readers</div>
-            </div>
-            <div className="text-center">
-              <div className="text-2xl font-bold text-primary">Weekly</div>
-              <div className="text-sm text-muted-foreground">Updates</div>
-            </div>
-          </div> */}
-          
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/blog">
-              <Button 
-                size="lg" 
-                className="rounded-full h-12 px-8 bg-primary hover:bg-primary/90 text-primary-foreground group"
+            <div className="container px-4 md:px-6">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
+                className="flex flex-col items-center justify-center space-y-4 text-center mb-12"
               >
-                <span className="flex items-center gap-2">
-                  View All Articles
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
-                </span>
-              </Button>
-            </Link>
-            
-            <Button 
-              size="lg" 
-              variant="outline" 
-              className="rounded-full h-12 px-8 border-primary/30 hover:bg-primary/10 group"
-            >
-              <span className="flex items-center gap-2">
-                <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
-                Subscribe to Newsletter
-              </span>
-            </Button>
-          </div>
-          
-          <div className="flex items-center justify-center gap-4 text-sm text-muted-foreground">
-            <div className="flex items-center gap-2">
-              <div className="flex -space-x-2">
-                {["A", "S", "M", "L"].map((letter, i) => (
-                  <div key={i} className="w-6 h-6 rounded-full bg-primary/10 border-2 border-background flex items-center justify-center text-xs font-medium text-primary">
-                    {letter}
-                  </div>
+                {/* <Badge className="rounded-full px-4 py-1.5 text-sm font-medium" variant="secondary">
+                  📚 Latest Insights
+                </Badge> */}
+                <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-6">Tech Insights & Industry Updates</h2>
+                <p className="max-w-[800px] text-muted-foreground md:text-lg mb-20">
+                  Stay ahead with the latest trends, best practices, and expert insights from our team of technology specialists.
+                </p>
+              </motion.div>
+
+              {/* Featured Blog Posts - First 3 */}
+              <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 mt-12 mb-12">
+                {[
+                  {
+                    slug: "devops-automation-2024",
+                    title: "The Future of DevOps: Automation Trends in 2024",
+                    excerpt: "Discover how AI-powered automation and GitOps are revolutionizing software delivery pipelines and reducing deployment risks.",
+                    category: "DevOps",
+                    readTime: "5 min read",
+                    date: "",
+                    author: {
+                      name: "System",
+                      role: "",
+                      avatar: "S"
+                    },
+                    featured: true
+                  },
+                  {
+                    slug: "cloud-security-enterprise",
+                    title: "Cloud Security Best Practices for Enterprise",
+                    excerpt: "Essential security frameworks and compliance strategies to protect your cloud infrastructure from emerging threats.",
+                    category: "Security",
+                    readTime: "7 min read", 
+                    date: "",
+                    author: {
+                      name: "Sytem", 
+                      role: "",
+                      avatar: "S"
+                    }
+                  },
+                  {
+                    slug: "kubernetes-vs-docker-swarm",
+                    title: "Kubernetes vs. Docker Swarm: A 2024 Comparison",
+                    excerpt: "An in-depth analysis of container orchestration platforms to help you choose the right solution for your infrastructure.",
+                    category: "Infrastructure",
+                    readTime: "6 min read",
+                    date: "", 
+                    author: {
+                      name: "System",
+                      role: "", 
+                      avatar: "S"
+                    }
+                  }
+                ].map((blog, i) => (
+                  <motion.div
+                    key={i}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: i * 0.05 }}
+                  >
+                    <Card className="h-full overflow-hidden border-border/40 bg-gradient-to-b from-background to-muted/10 backdrop-blur transition-all hover:shadow-md group cursor-pointer">
+                      <CardContent className="p-6 flex flex-col h-full">
+                        <div className="flex items-center justify-between mb-4">
+                          <div className="flex items-center gap-2">
+                            <span className="px-2 py-1 text-xs font-medium bg-primary/10 text-primary rounded-full">
+                              {blog.category}
+                            </span>
+                            {blog.featured && (
+                              <span className="px-2 py-1 text-xs font-medium bg-yellow-100 dark:bg-yellow-900/30 text-yellow-700 dark:text-yellow-300 rounded-full flex items-center gap-1">
+                                <Star className="w-3 h-3 fill-current" />
+                                Featured
+                              </span>
+                            )}
+                          </div>
+                          <span className="text-xs text-muted-foreground">{blog.readTime}</span>
+                        </div>
+
+                        <h3 className="text-xl font-bold mb-3 flex-grow group-hover:text-primary transition-colors duration-300">
+                          {blog.title}
+                        </h3>
+                        
+                        <p className="text-muted-foreground mb-6 leading-relaxed">
+                          {blog.excerpt}
+                        </p>
+                        
+                        <div className="mb-4">
+                          <Link href={`/blog/${blog.slug}`}>
+                            <Button 
+                              variant="outline" 
+                              size="sm" 
+                              className="w-full rounded-full group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300"
+                            >
+                              <span className="flex items-center gap-2">
+                                Read Full Article
+                                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
+                              </span>
+                            </Button>
+                          </Link>
+                        </div>
+
+                        <div className="flex items-center justify-between mt-auto pt-4 border-t border-border/40">
+                          <div className="flex items-center gap-3">
+                            <div className="size-10 rounded-full bg-primary/10 flex items-center justify-center text-primary font-medium text-sm">
+                              {blog.author.avatar}
+                            </div>
+                            <div>
+                              <p className="font-medium text-sm">{blog.author.name}</p>
+                              <p className="text-xs text-muted-foreground">{blog.author.role}</p>
+                            </div>
+                          </div>
+                          <div className="text-right">
+                            <p className="text-xs text-muted-foreground">{blog.date}</p>
+                            <div className="flex items-center gap-1 mt-1">
+                              <div className="w-1.5 h-1.5 rounded-full bg-green-500"></div>
+                              <span className="text-xs text-muted-foreground">Published</span>
+                            </div>
+                          </div>
+                        </div>
+                      </CardContent>
+                    </Card>
+                  </motion.div>
                 ))}
               </div>
-              <span>2,500+ subscribers</span>
+
+              {/* Call to Action - Navigate to Blog Page */}
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+                className="text-center"
+              >
+                <Card className="inline-block p-8 border-border/40 bg-gradient-to-r from-background to-muted/20 backdrop-blur-sm">
+                  <CardContent className="p-0 space-y-6">
+                    <div className="space-y-2">
+                      <h3 className="text-2xl font-bold text-foreground">Explore Our Complete Blog</h3>
+                      <p className="text-muted-foreground max-w-md mx-auto">
+                        Discover more in-depth tutorials, case studies, and technical insights from our engineering team.
+                      </p>
+                    </div>
+                    
+                    {/* <div className="grid grid-cols-3 gap-6 py-4 border-y border-border/40">
+                      <div className="text-center">
+                        <div className="text-2xl font-bold text-primary">50+</div>
+                        <div className="text-sm text-muted-foreground">Articles</div>
+                      </div>
+                      <div className="text-center">
+                        <div className="text-2xl font-bold text-primary">10k+</div>
+                        <div className="text-sm text-muted-foreground">Readers</div>
+                      </div>
+                      <div className="text-center">
+                        <div className="text-2xl font-bold text-primary">Weekly</div>
+                        <div className="text-sm text-muted-foreground">Updates</div>
+                      </div>
+                    </div> */}
+                    
+                    <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                      <Link href="/blog">
+                        <Button 
+                          size="lg" 
+                          className="rounded-full h-12 px-8 bg-primary hover:bg-primary/90 text-primary-foreground group"
+                        >
+                          <span className="flex items-center gap-2">
+                            View All Articles
+                            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
+                          </span>
+                        </Button>
+                      </Link>
+                      
+                      <Button 
+                        size="lg" 
+                        variant="outline" 
+                        className="rounded-full h-12 px-8 border-primary/30 hover:bg-primary/10 group"
+                      >
+                        <span className="flex items-center gap-2">
+                          <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
+                          Subscribe to Newsletter
+                        </span>
+                      </Button>
+                    </div>
+                    
+                    <div className="flex items-center justify-center gap-4 text-sm text-muted-foreground">
+                      <div className="flex items-center gap-2">
+                        <div className="flex -space-x-2">
+                          {["A", "S", "M", "L"].map((letter, i) => (
+                            <div key={i} className="w-6 h-6 rounded-full bg-primary/10 border-2 border-background flex items-center justify-center text-xs font-medium text-primary">
+                              {letter}
+                            </div>
+                          ))}
+                        </div>
+                        <span>2,500+ subscribers</span>
+                      </div>
+                      <div className="flex items-center gap-1">
+                        {/* <Star className="w-4 h-4 text-yellow-500 fill-yellow-500" />
+                        <span>4.9/5 rating</span> */}
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              </motion.div>
             </div>
-            <div className="flex items-center gap-1">
-              {/* <Star className="w-4 h-4 text-yellow-500 fill-yellow-500" />
-              <span>4.9/5 rating</span> */}
-            </div>
-          </div>
-        </CardContent>
-      </Card>
-    </motion.div>
-  </div>
-</section>
+          </section>
    
 
         {/* Testimonials Section */}
@@ -1176,45 +1174,45 @@ export default function LandingPage() {
                 FAQ
               </Badge>
               <h2 className="text-3xl md:text-4xl font-bold tracking-tight">Frequently Asked Questions</h2>
-              <p className="max-w-[800px] text-muted-foreground md:text-lg">
-                Find answers to common questions about our platform.
+              <p className="max-w-[800px] text-muted-foreground md:text-md">
+                Find answers to common questions about our Service.
               </p>
             </motion.div>
 
             <div className="mx-auto max-w-3xl">
               <Accordion type="single" collapsible className="w-full">
                 {[
-                  {
-                    question: "How does the 14-day free trial work?",
-                    answer:
-                      "Our 14-day free trial gives you full access to all features of your selected plan. No credit card is required to sign up, and you can cancel at any time during the trial period with no obligation.",
-                  },
-                  {
-                    question: "Can I change plans later?",
-                    answer:
-                      "Yes, you can upgrade or downgrade your plan at any time. If you upgrade, the new pricing will be prorated for the remainder of your billing cycle. If you downgrade, the new pricing will take effect at the start of your next billing cycle.",
-                  },
-                  {
-                    question: "Is there a limit to how many users I can add?",
-                    answer:
-                      "The number of users depends on your plan. The Starter plan allows up to 5 team members, the Professional plan allows up to 20, and the Enterprise plan has no limit on team members.",
-                  },
-                  {
-                    question: "Do you offer discounts for nonprofits or educational institutions?",
-                    answer:
-                      "Yes, we offer special pricing for nonprofits, educational institutions, and open-source projects. Please contact our sales team for more information.",
-                  },
-                  {
-                    question: "How secure is my data?",
-                    answer:
-                      "We take security very seriously. All data is encrypted both in transit and at rest. We use industry-standard security practices and regularly undergo security audits. Our platform is compliant with GDPR, CCPA, and other relevant regulations.",
-                  },
-                  {
-                    question: "What kind of support do you offer?",
-                    answer:
-                      "Support varies by plan. All plans include email support, with the Professional plan offering priority email support. The Enterprise plan includes 24/7 phone and email support. We also have an extensive knowledge base and community forum available to all users.",
-                  },
-                ].map((faq, i) => (
+                {
+                  question: "How do I get started with your services?",
+                  answer:
+                    "Getting started is easy. Reach out to us via our contact form or schedule a consultation. We'll assess your requirements, propose a tailored solution, and begin onboarding with minimal delay. No upfront commitment is required until you approve the plan.",
+                },
+                {
+                  question: "Can I customize your solutions to fit my business?",
+                  answer:
+                    "Absolutely. Our solutions are fully customizable. Whether you need DevOps automation, hosting, or custom application development, we tailor everything to your exact requirements.",
+                },
+                {
+                  question: "What platforms and technologies do you support?",
+                  answer:
+                    "We support a wide range of platforms including AWS, Lightsail, cPanel, WordPress, Joomla, Node.js, React, NestJS, Docker, and monitoring tools like Zabbix and Grafana.",
+                },
+                {
+                  question: "How secure is your infrastructure?",
+                  answer:
+                    "Security is a top priority. We implement end-to-end encryption, regular security audits, server hardening, and comply with industry standards like GDPR. We also offer firewall setups, backup systems, and uptime monitoring.",
+                },
+                {
+                  question: "Can you migrate my existing site or system?",
+                  answer:
+                    "Yes. We handle complete website or server migrations — including WordPress, Joomla, databases, and email — with minimal downtime and no data loss.",
+                },
+                {
+                  question: "What kind of support do you provide?",
+                  answer:
+                    "We offer dedicated support based on your service package. This includes email, phone, and ticket-based support. For premium clients, we provide 24/7 monitoring and emergency response.",
+                }
+              ].map((faq, i) => (
                   <motion.div
                     key={i}
                     initial={{ opacity: 0, y: 10 }}
@@ -1236,7 +1234,7 @@ export default function LandingPage() {
         </section>
 
         {/* CTA Section */}
-        <section className="w-full py-20 md:py-32 bg-gradient-to-br from-primary to-primary/80 text-primary-foreground relative overflow-hidden">
+        {/* <section className="w-full py-20 md:py-32 bg-gradient-to-br from-primary to-primary/80 text-primary-foreground relative overflow-hidden">
           <div className="absolute inset-0 -z-10 bg-[linear-gradient(to_right,#ffffff10_1px,transparent_1px),linear-gradient(to_bottom,#ffffff10_1px,transparent_1px)] bg-[size:4rem_4rem]"></div>
           <div className="absolute -top-24 -left-24 w-64 h-64 bg-white/10 rounded-full blur-3xl"></div>
           <div className="absolute -bottom-24 -right-24 w-64 h-64 bg-white/10 rounded-full blur-3xl"></div>
@@ -1274,16 +1272,16 @@ export default function LandingPage() {
               </p>
             </motion.div>
           </div>
-        </section>
+        </section> */}
       </main>
       <footer className="w-full border-t bg-background/95 backdrop-blur-sm">
         <div className="container flex flex-col gap-8 px-4 py-10 md:px-6 lg:py-16">
           <div className="grid gap-8 sm:grid-cols-2 md:grid-cols-4">
             <div className="space-y-4">
-              <div className="flex items-center gap-2 font-bold">
-                <div className="size-8 rounded-lg bg-gradient-to-br from-primary to-primary/70 flex items-center justify-center text-primary-foreground">
+              <div className="flex items-center gap-2 font-medium text-lg">
+                {/* <div className="size-8 rounded-lg bg-gradient-to-br from-primary to-primary/70 flex items-center justify-center text-primary-foreground">
                   S
-                </div>
+                </div> */}
                 <span>Syncos Solutions</span>
               </div>
               <p className="text-sm text-muted-foreground">
@@ -1356,17 +1354,17 @@ export default function LandingPage() {
                 </li>
                 <li>
                   <Link href="#pricing" className="text-muted-foreground hover:text-foreground transition-colors">
-                    Pricing
+                    Blogs
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="text-muted-foreground hover:text-foreground transition-colors">
-                    Integrations
+                  <Link href="#Career" className="text-muted-foreground hover:text-foreground transition-colors">
+                    Contact Us
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="text-muted-foreground hover:text-foreground transition-colors">
-                    API
+                  <Link href="#Locations" className="text-muted-foreground hover:text-foreground transition-colors">
+                    Our Locations
                   </Link>
                 </li>
               </ul>
@@ -1374,11 +1372,11 @@ export default function LandingPage() {
             <div className="space-y-4">
               <h4 className="text-sm font-bold">Resources</h4>
               <ul className="space-y-2 text-sm">
-                <li>
+                 <li>
                   <Link href="#" className="text-muted-foreground hover:text-foreground transition-colors">
-                    Documentation
+                    Updates
                   </Link>
-                </li>
+                </li> 
                 <li>
                   <Link href="#" className="text-muted-foreground hover:text-foreground transition-colors">
                     Guides
@@ -1424,7 +1422,7 @@ export default function LandingPage() {
           </div>
           <div className="flex flex-col gap-4 sm:flex-row justify-between items-center border-t border-border/40 pt-8">
             <p className="text-xs text-muted-foreground">
-              &copy; {new Date().getFullYear()} SaaSify. All rights reserved.
+              &copy; {new Date().getFullYear()} Syyncos Solutions. All rights reserved.
             </p>
             <div className="flex gap-4">
               <Link href="#" className="text-xs text-muted-foreground hover:text-foreground transition-colors">
