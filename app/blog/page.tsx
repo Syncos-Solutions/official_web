@@ -138,19 +138,19 @@ export default function BlogPage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-background via-muted/30 to-background">
       {/* Blog Hero Section */}
-      <section className="w-full py-20 md:py-32 relative overflow-hidden">
+      <section className="w-full py-15 mt-8 md:py-30 relative overflow-hidden">
         <div className="absolute inset-0 -z-10">
           <div className="absolute top-20 right-20 w-64 h-64 bg-primary/10 rounded-full blur-3xl animate-pulse"></div>
           <div className="absolute bottom-20 left-20 w-80 h-80 bg-secondary/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
         </div>
 
-        <div className="container px-4 md:px-6 relative">
+        <div className="container px-4 md:px-4 relative">
           {/* Back to Home */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
-            className="mb-8"
+            className={"mb-8"}
           >
             <Link href="/#blog">
               <Button variant="ghost" className="group">
@@ -164,7 +164,7 @@ export default function BlogPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-center mb-16"
+            className="text-center mt-20 mb-16"
           >
             {/* <Badge className="mb-4 rounded-full px-6 py-2 text-sm font-medium bg-primary/10 text-primary border-primary/20" variant="outline">
               📚 Tech Blog

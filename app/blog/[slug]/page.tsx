@@ -90,10 +90,10 @@ DevOps automation in 2024 is about intelligent, predictive systems that not only
     readTime: "5 min read",
     date: "Dec 15, 2024",
     author: {
-      name: "Alex Kumar",
-      role: "Senior DevOps Engineer",
-      avatar: "AK",
-      bio: "Alex is a Senior DevOps Engineer at Syncos Solutions with 8+ years of experience in automation and cloud infrastructure."
+      name: "System",
+     role: "",
+     avatar: "S",
+     bio: ""
     },
     featured: true,
     tags: ["DevOps", "Automation", "CI/CD", "GitOps", "AI"],
@@ -161,10 +161,10 @@ Cloud security is an ongoing process that requires continuous monitoring, regula
     readTime: "7 min read",
     date: "Dec 12, 2024",
     author: {
-      name: "Sarah Chen",
-      role: "Security Specialist",
-      avatar: "SC",
-      bio: "Sarah is a Security Specialist focused on cloud security architecture and enterprise compliance frameworks."
+      name: "System",
+     role: "",
+     avatar: "S",
+     bio: ""
     },
     tags: ["Security", "Cloud", "Compliance", "Enterprise", "Zero Trust"],
     likes: 98,
@@ -260,10 +260,10 @@ The choice depends on your specific needs, team expertise, and infrastructure re
     readTime: "6 min read",
     date: "Dec 10, 2024",
     author: {
-      name: "Mike Rodriguez",
-      role: "Infrastructure Architect",
-      avatar: "MR",
-      bio: "Mike is an Infrastructure Architect with expertise in container orchestration and cloud-native technologies."
+      name: "System",
+     role: "",
+     avatar: "S",
+     bio: ""
     },
     tags: ["Kubernetes", "Docker", "Containers", "Infrastructure", "Orchestration"],
     likes: 87,
@@ -487,10 +487,10 @@ A well-configured Prometheus and Grafana stack provides comprehensive visibility
     readTime: "8 min read",
     date: "Dec 8, 2024",
     author: {
-      name: "Lisa Wang",
-      role: "Monitoring Specialist",
-      avatar: "LW",
-      bio: "Lisa specializes in observability solutions and has extensive experience with Prometheus, Grafana, and monitoring best practices."
+      name: "System",
+     role: "",
+     avatar: "S",
+     bio: ""
     },
     tags: ["Monitoring", "Grafana", "Prometheus", "Observability", "DevOps"],
     likes: 156,
@@ -817,10 +817,10 @@ Modern API integration requires careful consideration of patterns, security, per
     readTime: "6 min read",
     date: "Dec 5, 2024",
     author: {
-      name: "David Park",
-      role: "Senior Developer",
-      avatar: "DP",
-      bio: "David is a Senior Developer with expertise in API design, microservices architecture, and modern integration patterns."
+      name: "System",
+     role: "",
+     avatar: "S",
+     bio: ""
     },
     tags: ["API", "REST", "GraphQL", "Architecture", "Integration"],
     likes: 203,
@@ -1196,10 +1196,10 @@ The key is to start with quick wins, establish proper monitoring, and gradually 
     readTime: "5 min read",
     date: "Dec 3, 2024",
     author: {
-        name: "Emma Thompson",
-     role: "Cloud Architect",
-     avatar: "ET",
-     bio: "Emma is a Cloud Architect specializing in AWS cost optimization and FinOps practices with over 6 years of experience helping organizations reduce cloud spending."
+      name: "System",
+     role: "",
+     avatar: "S",
+     bio: ""
    },
    tags: ["AWS", "Cost Optimization", "Cloud", "FinOps", "DevOps"],
    likes: 189,
@@ -1274,7 +1274,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
       <motion.nav
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
-        className={`sticky top-0 z-50 w-full backdrop-blur-lg transition-all duration-300 ${isScrolled ? "bg-background/80 shadow-sm border-b border-border/40" : "bg-transparent"}`}
+        className={`sticky top-0 z-50 mt-6 w-full backdrop-blur-lg transition-all duration-300 ${isScrolled ? "bg-background/80 shadow-sm border-b border-border/40" : "bg-transparent"}`}
       >
         <div className="container px-4 md:px-6 py-4">
           <div className="flex items-center justify-between">
@@ -1419,7 +1419,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
                         {blog.author.avatar}
                       </div>
                       <div className="flex-1">
-                        <h3 className="font-bold text-lg mb-1">About {blog.author.name}</h3>
+                        <h3 className="font-medium  text-lg mb-1">{blog.author.name}</h3>
                         <p className="text-muted-foreground text-sm mb-2">{blog.author.role}</p>
                         <p className="text-muted-foreground leading-relaxed">{blog.author.bio}</p>
                       </div>
