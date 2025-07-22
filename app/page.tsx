@@ -264,13 +264,14 @@ export default function LandingPage() {
               className="relative mx-auto max-w-5xl"
             >
               <div className="rounded-xl overflow-hidden shadow-2xl border border-border/40 bg-gradient-to-b from-background to-muted/20">
+              <iframe
+                  src="https://my.spline.design/genkubgreetingrobot-tmlK71aXlgHtkIeplp1JMJDH/"
+                  width={1280}
+                  height={720}
+                  allowFullScreen
+                />
+
               
-    <iframe
-      src="https://my.spline.design/genkubgreetingrobot-tmlK71aXlgHtkIeplp1JMJDH/"
-     width={1280}
-      height={720}
-      allowfullscreen
-    ></iframe>
   
 
                 {/* <Image
