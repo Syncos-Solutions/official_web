@@ -165,98 +165,122 @@ const AboutSection = () => {
             </motion.div>
           </motion.div>
 
-          {/* Right Content - Orbiting Technologies */}
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            className="flex items-center justify-center"
-          >
-            <div className="relative flex h-[500px] w-full max-w-[500px] items-center justify-center overflow-hidden">
-              {/* Central Logo */}
-              <div className="relative z-10 flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-br from-primary to-primary/70 text-primary-foreground text-lg font-bold shadow-lg">
-                SS
-              </div>
+{/* Right Content - Orbiting Technologies */}
+<motion.div
+  initial={{ opacity: 0, x: 30 }}
+  whileInView={{ opacity: 1, x: 0 }}
+  viewport={{ once: true }}
+  transition={{ duration: 0.6, delay: 0.3 }}
+  className="flex items-center justify-center"
+>
+  <div className="relative flex h-[500px] w-full max-w-[500px] items-center justify-center overflow-hidden">
+    
+    {/* Orbit 1 - Inner circle */}
+    <div
+      className="absolute top-1/2 left-1/2 animate-spin"
+      style={{
+        animationDuration: '20s',
+        transformOrigin: 'center',
+      }}
+    >
+      <div className="absolute h-[200px] w-[200px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-border/20" />
+      {[
+        { icon: "react", angle: 0 },
+        { icon: "nodejs", angle: 90 },
+        { icon: "docker", angle: 180 },
+        { icon: "typescript", angle: 270 },
+      ].map(({ icon, angle }, index) => (
+        <div
+          key={index}
+          className="absolute flex h-12 w-12 items-center justify-center rounded-full bg-card border border-border/40 backdrop-blur-sm hover:shadow-lg transition-all duration-300"
+          style={{
+            top: '50%',
+            left: '50%',
+            transform: `rotate(${angle}deg) translate(100px) rotate(-${angle}deg)`,
+          }}
+        >
+          <img
+            src={`https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${icon}/${icon}-original.svg`}
+            alt={icon}
+            className="w-6 h-6"
+          />
+        </div>
+      ))}
+    </div>
 
-              {/* Orbit 1 - Inner circle */}
-              <div className="absolute inset-0 animate-spin" style={{ animationDuration: '20s' }}>
-                <div className="relative h-full w-full">
-                  <div className="absolute top-1/2 left-1/2 h-[200px] w-[200px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-border/20"></div>
-                  {/* React */}
-                  <div className="absolute flex h-12 w-12 items-center justify-center rounded-full bg-card border border-border/40 backdrop-blur-sm hover:shadow-lg transition-all duration-300" style={{ top: 'calc(50% - 100px)', left: '50%', transform: 'translateX(-50%)' }}>
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" className="w-6 h-6" />
-                  </div>
-                  {/* Node.js */}
-                  <div className="absolute flex h-12 w-12 items-center justify-center rounded-full bg-card border border-border/40 backdrop-blur-sm hover:shadow-lg transition-all duration-300" style={{ top: 'calc(50% + 100px)', left: '50%', transform: 'translateX(-50%)' }}>
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js" className="w-6 h-6" />
-                  </div>
-                  {/* Docker */}
-                  <div className="absolute flex h-12 w-12 items-center justify-center rounded-full bg-card border border-border/40 backdrop-blur-sm hover:shadow-lg transition-all duration-300" style={{ top: '50%', left: 'calc(50% + 100px)', transform: 'translateY(-50%)' }}>
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker" className="w-6 h-6" />
-                  </div>
-                  {/* TypeScript */}
-                  <div className="absolute flex h-12 w-12 items-center justify-center rounded-full bg-card border border-border/40 backdrop-blur-sm hover:shadow-lg transition-all duration-300" style={{ top: '50%', left: 'calc(50% - 100px)', transform: 'translateY(-50%)' }}>
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="TypeScript" className="w-6 h-6" />
-                  </div>
-                </div>
-              </div>
+    {/* Orbit 2 - Middle circle */}
+    <div
+      className="absolute top-1/2 left-1/2 animate-spin"
+      style={{
+        animationDuration: '30s',
+        animationDirection: 'reverse',
+        transformOrigin: 'center',
+      }}
+    >
+      <div className="absolute h-[300px] w-[300px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-border/20" />
+      {[
+        { icon: "amazonwebservices/amazonwebservices-original-wordmark", angle: 0 },
+        { icon: "kubernetes/kubernetes-plain", angle: 60 },
+        { icon: "postgresql/postgresql-original", angle: 120 },
+        { icon: "mongodb/mongodb-original", angle: 180 },
+        { icon: "redis/redis-original", angle: 240 },
+        { icon: "graphql/graphql-plain", angle: 300 },
+      ].map(({ icon, angle }, index) => (
+        <div
+          key={index}
+          className="absolute flex h-12 w-12 items-center justify-center rounded-full bg-card border border-border/40 backdrop-blur-sm hover:shadow-lg transition-all duration-300"
+          style={{
+            top: '50%',
+            left: '50%',
+            transform: `rotate(${angle}deg) translate(150px) rotate(-${angle}deg)`,
+          }}
+        >
+          <img
+            src={`https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${icon}.svg`}
+            alt={icon.split('/').pop()}
+            className="w-6 h-6"
+          />
+        </div>
+      ))}
+    </div>
 
-              {/* Orbit 2 - Middle circle */}
-              <div className="absolute inset-0 animate-spin" style={{ animationDuration: '30s', animationDirection: 'reverse' }}>
-                <div className="relative h-full w-full">
-                  <div className="absolute top-1/2 left-1/2 h-[300px] w-[300px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-border/20"></div>
-                  {/* AWS */}
-                  <div className="absolute flex h-12 w-12 items-center justify-center rounded-full bg-card border border-border/40 backdrop-blur-sm hover:shadow-lg transition-all duration-300" style={{ top: 'calc(50% - 150px)', left: '50%', transform: 'translateX(-50%)' }}>
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" alt="AWS" className="w-6 h-6" />
-                  </div>
-                  {/* Kubernetes */}
-                  <div className="absolute flex h-12 w-12 items-center justify-center rounded-full bg-card border border-border/40 backdrop-blur-sm hover:shadow-lg transition-all duration-300" style={{ top: 'calc(50% + 150px)', left: '50%', transform: 'translateX(-50%)' }}>
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg" alt="Kubernetes" className="w-6 h-6" />
-                  </div>
-                  {/* PostgreSQL */}
-                  <div className="absolute flex h-12 w-12 items-center justify-center rounded-full bg-card border border-border/40 backdrop-blur-sm hover:shadow-lg transition-all duration-300" style={{ top: '50%', left: 'calc(50% + 150px)', transform: 'translateY(-50%)' }}>
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="PostgreSQL" className="w-6 h-6" />
-                  </div>
-                  {/* MongoDB */}
-                  <div className="absolute flex h-12 w-12 items-center justify-center rounded-full bg-card border border-border/40 backdrop-blur-sm hover:shadow-lg transition-all duration-300" style={{ top: '50%', left: 'calc(50% - 150px)', transform: 'translateY(-50%)' }}>
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB" className="w-6 h-6" />
-                  </div>
-                  {/* Redis */}
-                  <div className="absolute flex h-12 w-12 items-center justify-center rounded-full bg-card border border-border/40 backdrop-blur-sm hover:shadow-lg transition-all duration-300" style={{ top: 'calc(50% - 106px)', left: '86%' }}>
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg" alt="Redis" className="w-6 h-6" />
-                  </div>
-                  {/* GraphQL */}
-                  <div className="absolute flex h-12 w-12 items-center justify-center rounded-full bg-card border border-border/40 backdrop-blur-sm hover:shadow-lg transition-all duration-300" style={{ top: 'calc(50% + 106px)', left: 'calc(50% - 106px)' }}>
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/graphql/graphql-plain.svg" alt="GraphQL" className="w-6 h-6" />
-                  </div>
-                </div>
-              </div>
+    {/* Orbit 3 - Outer circle */}
+    <div
+      className="absolute top-1/2 left-1/2 animate-spin"
+      style={{
+        animationDuration: '40s',
+        transformOrigin: 'center',
+      }}
+    >
+      <div className="absolute h-[400px] w-[400px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-border/20" />
+      {[
+        { icon: "terraform/terraform-original", angle: 0 },
+        { icon: "grafana/grafana-original", angle: 90 },
+        { icon: "jenkins/jenkins-original", angle: 170 },
+        { icon: "nginx/nginx-original", angle: 270 },
+      ].map(({ icon, angle }, index) => (
+        <div
+          key={index}
+          className="absolute flex h-12 w-12 items-center justify-center rounded-full bg-card border border-border/40 backdrop-blur-sm hover:shadow-lg transition-all duration-300"
+          style={{
+            top: '50%',
+            left: '50%',
+            transform: `rotate(${angle}deg) translate(200px) rotate(-${angle}deg)`,
+          }}
+        >
+          <img
+            src={`https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${icon}.svg`}
+            alt={icon.split('/').pop()}
+            className="w-6 h-6"
+          />
+        </div>
+      ))}
+    </div>
+  </div>
+</motion.div>
 
-              {/* Orbit 3 - Outer circle */}
-              <div className="absolute inset-0 animate-spin" style={{ animationDuration: '40s' }}>
-                <div className="relative h-full w-full">
-                  <div className="absolute top-1/2 left-1/2 h-[400px] w-[400px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-border/20"></div>
-                  {/* Terraform */}
-                  <div className="absolute flex h-12 w-12 items-center justify-center rounded-full bg-card border border-border/40 backdrop-blur-sm hover:shadow-lg transition-all duration-300" style={{ top: 'calc(50% - 200px)', left: '80%', transform: 'translateX(-50%)' }}>
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/terraform/terraform-original.svg" alt="Terraform" className="w-6 h-6" />
-                  </div>
-                  {/* Grafana */}
-                  <div className="absolute flex h-12 w-12 items-center justify-center rounded-full bg-card border border-border/40 backdrop-blur-sm hover:shadow-lg transition-all duration-300" style={{ top: 'calc(50% + 200px)', left: '50%', transform: 'translateX(-50%)' }}>
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/grafana/grafana-original.svg" alt="Grafana" className="w-6 h-6" />
-                  </div>
-                  {/* Jenkins */}
-                  <div className="absolute flex h-12 w-12 items-center justify-center rounded-full bg-card border border-border/40 backdrop-blur-sm hover:shadow-lg transition-all duration-300" style={{ top: '50%', left: 'calc(50% + 200px)', transform: 'translateY(-50%)' }}>
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jenkins/jenkins-original.svg" alt="Jenkins" className="w-6 h-6" />
-                  </div>
-                  {/* Nginx */}
-                  <div className="absolute flex h-12 w-12 items-center justify-center rounded-full bg-card border border-border/40 backdrop-blur-sm hover:shadow-lg transition-all duration-300" style={{ top: '50%', left: 'calc(50% - 200px)', transform: 'translateY(-50%)' }}>
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nginx/nginx-original.svg" alt="Nginx" className="w-6 h-6" />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </motion.div>
+
+
         </div>
 
         {/* Vision & Mission Cards */}
