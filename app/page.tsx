@@ -29,6 +29,7 @@ import { Badge } from "../components/ui/badge"
 import { Card, CardContent } from "../components/ui/card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "../components/ui/tabs"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../components/ui/accordion"
+import AboutSection from "../components/About"
 
 
 export default function LandingPage() {
@@ -124,19 +125,19 @@ export default function LandingPage() {
               Features
             </Link>
             <Link
-              href="#testimonials"
+              href="#Blogs"
               className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
             >
               Blogs
             </Link>
             <Link
-              href="#pricing"
+              href="#About"
               className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
             >
               About Us
             </Link>
             <Link
-              href="#pricing"
+              href="#Career"
               className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
             >
               Career
@@ -290,8 +291,10 @@ export default function LandingPage() {
 
 
         {/* Modern About Us Section for Syncos Solutions */}
-<section className="w-full py-20 md:py-32 bg-gradient-to-br from-background via-muted/30 to-background relative overflow-hidden">
-  {/* Animated background elements */}
+
+        <AboutSection />
+{/* <section className="w-full py-20 md:py-32 bg-gradient-to-br from-background via-muted/30 to-background relative overflow-hidden" id="About">
+  
   <div className="absolute inset-0 -z-10">
     <div className="absolute top-20 left-20 w-72 h-72 bg-primary/10 rounded-full blur-3xl animate-pulse"></div>
     <div className="absolute bottom-20 right-20 w-96 h-96 bg-secondary/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
@@ -299,7 +302,7 @@ export default function LandingPage() {
   </div>
 
   <div className="container px-4 md:px-6 relative">
-    {/* Section Header */}
+    
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
@@ -319,9 +322,9 @@ export default function LandingPage() {
       </p>
     </motion.div>
 
-    {/* Main Content Grid */}
+ 
     <div className="grid lg:grid-cols-2 gap-16 items-center mb-20">
-      {/* Left Content */}
+     
       <motion.div
         initial={{ opacity: 0, x: -30 }}
         whileInView={{ opacity: 1, x: 0 }}
@@ -345,7 +348,7 @@ export default function LandingPage() {
           </p>
         </div>
 
-        {/* Key Stats */}
+        
         <div className="grid grid-cols-3 gap-6 pt-8 border-t border-border/40">
           {[
             { number: "20+", label: "Projects Delivered" },
@@ -367,7 +370,7 @@ export default function LandingPage() {
         </div>
       </motion.div>
 
-      {/* Right Content - Interactive Cards */}
+     
       <motion.div
         initial={{ opacity: 0, x: 30 }}
         whileInView={{ opacity: 1, x: 0 }}
@@ -421,7 +424,7 @@ export default function LandingPage() {
       </motion.div>
     </div>
 
-    {/* Vision & Mission Section */}
+    
     <motion.div
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
@@ -460,7 +463,7 @@ export default function LandingPage() {
       </Card>
     </motion.div>
 
-    {/* Team Values */}
+
     <motion.div
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
@@ -499,7 +502,7 @@ export default function LandingPage() {
       </div>
     </motion.div>
 
-    {/* Call to Action */}
+ 
     <motion.div
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
@@ -524,28 +527,9 @@ export default function LandingPage() {
   </div>
 </section>
 
-        {/* Logos Section */}
-        {/* <section className="w-full py-12 border-y bg-muted/30">
-          <div className="container px-4 md:px-6">
-            <div className="flex flex-col items-center justify-center space-y-4 text-center">
-              <p className="text-sm font-medium text-muted-foreground">Trusted by innovative companies worldwide</p>
-              <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12 lg:gap-16">
-                {[1, 2, 3, 4, 5].map((i) => (
-                  <Image
-                    key={i}
-                    src={`/placeholder-logo.svg`}
-                    alt={`Company logo ${i}`}
-                    width={120}
-                    height={60}
-                    className="h-8 w-auto opacity-70 grayscale transition-all hover:opacity-100 hover:grayscale-0"
-                  />
-                ))}
-              </div>
-            </div>
-          </div>
-        </section> */}
 
-        {/* Features Section */}
+
+        
         <section id="features" className="w-full py-20 md:py-32">
           <div className="container px-4 md:px-6">
             <motion.div
@@ -586,7 +570,7 @@ export default function LandingPage() {
               ))}
             </motion.div>
           </div>
-        </section>
+        </section> */}
 
         {/* How It Works Section */}
         <section className="w-full py-20 md:py-32 bg-muted/30 relative overflow-hidden">
@@ -649,7 +633,7 @@ export default function LandingPage() {
         </section>
 
 {/* Home Page Blog Section - Navigate to Separate Blog Page */}
-      <section id="blog" className="w-full py-20 md:py-32">
+      <section id="Blogs" className="w-full py-20 md:py-32">
             <div className="container px-4 md:px-6">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
