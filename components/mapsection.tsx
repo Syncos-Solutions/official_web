@@ -68,7 +68,7 @@ const ModernMapSection = () => {
         <div className="grid lg:grid-cols-2 gap-12 mb-16">
           {offices.map((office, index) => (
             <motion.div
-              key={office.city}
+              
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
