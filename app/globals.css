@@ -73,3 +73,55 @@
     transform: translateY(0);
   }
 }
+
+/* Add this to your global CSS file (e.g., globals.css) */
+
+/* Custom orbit animations */
+@keyframes orbit-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Orbit animation classes */
+.orbit-1 {
+  animation: orbit-spin 8s linear infinite;
+}
+
+.orbit-2 {
+  animation: orbit-spin 14s linear infinite reverse;
+}
+
+.orbit-3 {
+  animation: orbit-spin 20s linear infinite;
+}
+
+/* Alternative slower animations */
+.animate-spin-slow {
+  animation: orbit-spin 8s linear infinite;
+}
+
+.animate-spin-medium {
+  animation: orbit-spin 14s linear infinite reverse;
+}
+
+.animate-spin-very-slow {
+  animation: orbit-spin 20s linear infinite;
+}
+
+/* Ensure proper positioning */
+.tech-orbit-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.tech-orbit-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
