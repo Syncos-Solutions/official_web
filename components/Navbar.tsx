@@ -48,7 +48,7 @@ export default function Navbar({ currentPage = "home" }: NavbarProps) {
     { href: "/#Features", label: "Features", page: "Features" },
     { href: "/#Blogs", label: "Blogs", page: "Blogs" },
     { href: "/#About", label: "About Us", page: "About" },
-    // { href: "/career", label: "Career", page: "Career" },
+     { href: "/Projects", label: "Projects", page: "Projects" },
     { href: "/contact", label: "Contact Us", page: "contact" },
   ]
 
@@ -57,7 +57,7 @@ export default function Navbar({ currentPage = "home" }: NavbarProps) {
     { href: "#Features", label: "Features" },
     { href: "#Blogs", label: "Blogs" },
     { href: "#About", label: "About Us" },
-    // { href: "/Career", label: "Career" },
+     { href: "/Projects", label: "Projects" },
     { href: "/contact", label: "Contact Us" },
   ]
 
@@ -78,7 +78,7 @@ export default function Navbar({ currentPage = "home" }: NavbarProps) {
         </div>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex gap-8">
+        <nav className="hidden lg:flex gap-8">
           {navLinks.map((link) => (
             <Link
               key={link.page}
@@ -95,7 +95,7 @@ export default function Navbar({ currentPage = "home" }: NavbarProps) {
         </nav>
 
         {/* Desktop Actions */}
-        <div className="hidden md:flex gap-4 items-center">
+        <div className="hidden lg:flex gap-4 items-center">
           <Button 
             variant="ghost" 
             size="icon" 
@@ -116,7 +116,7 @@ export default function Navbar({ currentPage = "home" }: NavbarProps) {
         </div>
 
         {/* Mobile Actions */}
-        <div className="flex items-center gap-4 md:hidden">
+        <div className="flex items-center gap-4 lg:hidden">
           <Button 
             variant="ghost" 
             size="icon" 
@@ -146,7 +146,7 @@ export default function Navbar({ currentPage = "home" }: NavbarProps) {
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -20 }}
-          className="md:hidden absolute top-16 inset-x-0 bg-background/95 backdrop-blur-lg border-b"
+          className="lg:hidden absolute top-16 inset-x-0 bg-background/95 backdrop-blur-lg border-b"
         >
           <div className="container py-4 flex flex-col gap-4">
             {mobileLinks.map((link, index) => (

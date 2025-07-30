@@ -6,7 +6,7 @@ import { Badge } from "./ui/badge"
 const ModernMapSection = () => {
   const offices = [
     {
-      city: "Darwin",
+      
       country: "Australia",
       address: "Level 3, 456 Smith Street Mall",
       zipcode: "NT 0800",
@@ -20,7 +20,7 @@ const ModernMapSection = () => {
       color: "blue"
     },
     {
-      city: "Colombo",
+      
       country: "Sri Lanka", 
       address: "No. 123, Galle Road, Colombo 03",
       zipcode: "00300",
@@ -56,7 +56,7 @@ const ModernMapSection = () => {
           className="text-center mb-16"
         >
           
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-slate-900 text-black dark:from-slate-100 dark:via-blue-200 dark:to-emerald-200 bg-clip-text text-transparent">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6 bg-clip-text text-transparent bg-gradient-to-r from-foreground to-foreground/70">
             Visit Our Offices
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
@@ -81,7 +81,7 @@ const ModernMapSection = () => {
                   
                   <div className="text-left">
                     <div className="flex items-center gap-2">
-                      <h3 className="text-2xl font-bold">{office.city}, {office.country}</h3>
+                      <h3 className="text-2xl font-bold"> {office.country}</h3>
                       {office.isHeadquarters && (
                         <Badge className="bg-gradient-to-r from-yellow-500 to-orange-500 text-white text-xs">
                           HQ

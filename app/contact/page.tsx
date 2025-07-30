@@ -283,13 +283,13 @@ export default function ContactUsPage() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.3 }}
-                  className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6"
+                  className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6 bg-clip-text text-transparent bg-gradient-to-r from-foreground to-foreground/70"
                 >
-                  <span className="bg-gradient-to-b from-foreground via-blue/600 to-purple/500 bg-clip-text text-transparent">
+                  <span className="">
                       Let's Transform Your  
                   </span>
                   <br />
-                  <span className="bg-gradient-to-b from-foreground via-blue/600 to-purple/600 bg-clip-text text-transparent">
+                  <span className="">
                     Digital Vision Into Reality
                   </span>
                 </motion.h1>
