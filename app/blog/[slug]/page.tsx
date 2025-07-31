@@ -1554,7 +1554,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
               </div>
 
               {/* Title */}
-              <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-6 bg-clip-text text-transparent bg-gradient-to-r from-foreground via-primary to-foreground">
+              <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-6 bg-clip-text text-center text-transparent bg-gradient-to-r from-foreground via-primary to-foreground">
                 {blog.title}
               </h1>
 
