@@ -470,7 +470,7 @@ export default function LandingPage() {
                       >
                         <span className="flex items-center gap-2">
                           <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
-                          Subscribe to Newsletter
+                          <Link href="/#newsletter">Subscribe to Newsletter </Link>
                         </span>
                       </Button>
                     </div>

@@ -45,18 +45,18 @@ export default function Navbar({ currentPage = "home" }: NavbarProps) {
   const isActivePage = (page: string) => currentPage === page
 
   const navLinks = [
-    { href: "/#Features", label: "Features", page: "Features" },
-    { href: "/#Blogs", label: "Blogs", page: "Blogs" },
     { href: "/#About", label: "About Us", page: "About" },
+    { href: "/#Features", label: "Features", page: "Features" },
+     { href: "/#Blogs", label: "Blogs", page: "Blogs" },
      { href: "/Projects", label: "Projects", page: "Projects" },
     { href: "/contact", label: "Contact Us", page: "contact" },
   ]
 
   // Mobile menu links (matching your original structure)
   const mobileLinks = [
-    { href: "#Features", label: "Features" },
-    { href: "#Blogs", label: "Blogs" },
     { href: "#About", label: "About Us" },
+    { href: "#Features", label: "Features" },
+     { href: "/#Blogs", label: "Blogs" },
      { href: "/Projects", label: "Projects" },
     { href: "/contact", label: "Contact Us" },
   ]

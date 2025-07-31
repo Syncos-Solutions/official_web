@@ -478,7 +478,7 @@ export default function ContactUsPage() {
 
                             {/* Company and Phone Row */}
                             <div className="grid md:grid-cols-2 gap-4">
-                              <div className="space-y-2">
+                              {/* <div className="space-y-2">
                                 <Label htmlFor="company" className="flex items-center gap-2">
                                   <Building className="w-4 h-4 text-blue-500" />
                                   Company Name
@@ -491,7 +491,7 @@ export default function ContactUsPage() {
                                   onChange={handleInputChange}
                                   className="rounded-xl border-slate-200/60 dark:border-slate-700/60 focus:border-blue-500/60 focus:ring-blue-500/20 transition-all duration-300"
                                 />
-                              </div>
+                              </div> */}
                               
                               <div className="space-y-2">
                                 <Label htmlFor="phone" className="flex items-center gap-2">
@@ -512,7 +512,7 @@ export default function ContactUsPage() {
 
                             {/* Service and Budget Row */}
                             <div className="grid md:grid-cols-2 gap-4">
-                              <div className="space-y-2">
+                              {/* <div className="space-y-2">
                                 <Label className="flex items-center gap-2">
                                   <Zap className="w-4 h-4 text-blue-500" />
                                   Service Needed *
@@ -529,9 +529,9 @@ export default function ContactUsPage() {
                                     ))}
                                   </SelectContent>
                                 </Select>
-                              </div>
+                              </div> */}
 
-                              <div className="space-y-2">
+                              {/* <div className="space-y-2">
                                 <Label className="flex items-center gap-2">
                                   <Target className="w-4 h-4 text-blue-500" />
                                   Project Budget
@@ -548,11 +548,11 @@ export default function ContactUsPage() {
                                     ))}
                                   </SelectContent>
                                 </Select>
-                              </div>
+                              </div> */}
                             </div>
 
                             {/* Timeline */}
-                            <div className="space-y-2">
+                            {/* <div className="space-y-2">
                               <Label className="flex items-center gap-2">
                                 <Clock className="w-4 h-4 text-blue-500" />
                                 Project Timeline *
@@ -569,7 +569,7 @@ export default function ContactUsPage() {
                                   ))}
                                 </SelectContent>
                               </Select>
-                            </div>
+                            </div> */}
 
                             {/* Message */}
                             <div className="space-y-2">
@@ -583,7 +583,7 @@ export default function ContactUsPage() {
                                 placeholder="Tell us about your project requirements, current challenges, and goals. The more details you provide, the better we can tailor our solution to your needs."
                                 value={formData.message}
                                 onChange={handleInputChange}
-                                className="rounded-xl border-slate-200/60 dark:border-slate-700/60 focus:border-blue-500/60 focus:ring-blue-500/20 transition-all duration-300 min-h-[120px] resize-none"
+                                className="rounded-xl border-slate-200/60 dark:border-slate-700/60 focus:border-blue-500/60 focus:ring-blue-500/20 transition-all duration-300 min-h-[170px] resize-none"
                                 required
                               />
                             </div>
@@ -668,7 +668,7 @@ export default function ContactUsPage() {
                                 <div>
                                   <div className="flex items-center gap-2 font-mono">
                                     <h4 className="font-bold text-lg group-hover:text-blue-600 transition-colors duration-300">
-                                      {office.city}
+                                      {office.country}
                                     </h4>
                                     {office.isHeadquarters && (
                                       <Badge variant="secondary" className="text-xs bg-yellow-100 dark:bg-yellow-900/30 text-yellow-700 dark:text-yellow-300">
@@ -676,7 +676,7 @@ export default function ContactUsPage() {
                                       </Badge>
                                     )}
                                   </div>
-                                  <p className="text-sm text-slate-500 dark:text-slate-400">{office.country}</p>
+                                  {/* <p className="text-sm text-slate-500 dark:text-slate-400">{office.country}</p> */}
                                 </div>
                               </div>
                               <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
