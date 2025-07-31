@@ -61,7 +61,7 @@ export default function ProjectsPage() {
       description: "A comprehensive travel and tourism platform featuring tour packages, booking systems, and destination guides for Sri Lankan adventures.",
       category: "Travel & Tourism",
       url: "https://mihithlankatours.com/",
-      technologies: ["React", "Next.js", "Node.js", "MongoDB", "Stripe API"],
+      technologies: ["#React", "#Next.js", "#TailwindCss", "#TypeScript", ],
       features: [
         "Online booking system",
         "Integrate blogs section",
@@ -70,142 +70,144 @@ export default function ProjectsPage() {
         "SEO optimization"
       ],
       status: "Live",
-      completedDate: "December 2024",
+      completedDate: "March 2025",
       featured: true,
       type: "Web Application",
       detailedInfo: {
         challenge: "Create a modern, user-friendly travel platform that allows tourists to easily discover and book Sri Lankan tour packages while providing the business with efficient management tools.",
         solution: "Developed a full-stack web application with integrated booking system, payment processing, and content management capabilities.",
         results: [
-          "Increased online bookings by 300%",
-          "Reduced manual booking processing time by 80%",
+          "Increased online bookings by 80%",
+          "Reduced manual booking processing time by 50%",
           "Improved customer satisfaction scores",
           "Enhanced mobile user experience"
         ],
-        timeline: "3 months",
+        timeline: "2 months",
         teamSize: "4 developers",
         clientFeedback: "Exceptional work! The platform has transformed our business operations and significantly increased our online presence.",
         technicalHighlights: [
           "Responsive design optimized for mobile devices",
-          "Secure payment gateway integration",
+          "Blogs section implement",
           "SEO-optimized content structure",
-          "Real-time availability checking",
-          "Automated email confirmations"
+          "No performance issues",
+          "Email Integration"
         ]
       }
     },
     {
-      id: 2,
-      title: "Enterprise DevOps Pipeline",
-      description: "Automated CI/CD pipeline implementation for a multinational corporation, reducing deployment time by 75% and improving reliability.",
-      category: "DevOps & Infrastructure",
-      technologies: ["Docker", "Kubernetes", "Jenkins", "AWS", "Terraform"],
-      features: [
-        "Automated testing and deployment",
-        "Container orchestration",
-        "Infrastructure as code",
-        "Monitoring and alerting",
-        "Security scanning"
-      ],
-      status: "Completed",
-      completedDate: "November 2024",
-      featured: true,
-      type: "Infrastructure",
-      detailedInfo: {
-        challenge: "A large enterprise needed to modernize their deployment process to reduce manual errors, improve deployment speed, and ensure consistent environments across development, staging, and production.",
-        solution: "Implemented a comprehensive DevOps pipeline using containerization, automation, and infrastructure as code principles.",
-        results: [
-          "75% reduction in deployment time",
-          "90% decrease in deployment-related issues",
-          "100% infrastructure reproducibility",
-          "Improved team productivity and collaboration"
+        id: 2,
+        title: "Sri Lankan Vibes Blog",
+        description: "Designed and developed a vibrant, responsive blog platform capturing the essence of Sri Lankan culture, travel, and lifestyle.",
+        category: "Web Development",
+        url: "https://srilankanvibez.com/",
+        technologies: ["Next.js", "Tailwind CSS", "Sanity CMS", "#S3", "#TypeScript"],
+        features: [
+          "Dynamic content management with Sanity CMS",
+          "Mobile-first responsive design",
+          "Animated transitions with Framer Motion",
+          "SEO optimization and fast performance",
+          "Dark/light mode support"
         ],
-        timeline: "6 months",
-        teamSize: "3 DevOps engineers",
-        clientFeedback: "The DevOps transformation has revolutionized our development workflow. Deployments that used to take hours now complete in minutes with zero errors.",
-        technicalHighlights: [
-          "Multi-environment CI/CD pipeline",
-          "Automated security scanning and compliance checks",
-          "Container orchestration with Kubernetes",
-          "Infrastructure provisioning with Terraform",
-          "Comprehensive monitoring and alerting system"
-        ]
-      }
-    },
-    {
-      id: 3,
-      title: "Cloud Migration Project",
-      description: "Complete infrastructure migration from on-premises to AWS cloud, ensuring zero downtime and enhanced scalability.",
-      category: "Cloud Services",
-      technologies: ["AWS", "Docker", "RDS", "CloudFormation", "Route 53"],
-      features: [
-        "Zero-downtime migration",
-        "Auto-scaling infrastructure",
-        "Database optimization",
-        "Backup and disaster recovery",
-        "Cost optimization"
-      ],
-      status: "Completed",
-      completedDate: "October 2024",
-      type: "Migration",
-      detailedInfo: {
-        challenge: "Migrate legacy on-premises infrastructure to AWS cloud while maintaining 24/7 uptime and improving performance and scalability.",
-        solution: "Executed a phased migration approach using AWS services, ensuring seamless transition with enhanced capabilities.",
-        results: [
-          "Zero downtime during migration",
-          "40% reduction in infrastructure costs",
-          "300% improvement in scalability",
-          "Enhanced disaster recovery capabilities"
-        ],
-        timeline: "4 months",
-        teamSize: "5 cloud engineers",
-        clientFeedback: "Seamless migration with immediate benefits. Our applications now run faster and more reliably than ever before.",
-        technicalHighlights: [
-          "Phased migration strategy",
-          "Auto-scaling EC2 instances",
-          "RDS database optimization",
-          "CloudFront CDN implementation",
-          "Automated backup and disaster recovery"
-        ]
-      }
-    },
-    {
-      id: 4,
-      title: "E-commerce Platform",
-      description: "Custom e-commerce solution with advanced inventory management, payment processing, and analytics dashboard.",
-      category: "E-commerce",
-      technologies: ["React", "Node.js", "PostgreSQL", "Redis", "Stripe"],
-      features: [
-        "Inventory management",
-        "Multi-payment gateway",
-        "Real-time analytics",
-        "Mobile responsive",
-        "Admin dashboard"
-      ],
-      status: "In Development",
-      completedDate: "Q1 2025",
-      type: "Web Application",
-      detailedInfo: {
-        challenge: "Build a comprehensive e-commerce platform that can handle high traffic, complex inventory management, and provide real-time analytics for business decisions.",
-        solution: "Developing a scalable e-commerce solution with modern technologies and best practices for performance and user experience.",
-        results: [
-          "Expected to handle 10,000+ concurrent users",
-          "Real-time inventory tracking",
-          "Advanced analytics and reporting",
-          "Mobile-first responsive design"
-        ],
-        timeline: "5 months",
-        teamSize: "6 developers",
-        clientFeedback: "Early preview looks amazing! The admin dashboard provides insights we never had before.",
-        technicalHighlights: [
-          "Microservices architecture",
-          "Real-time data processing with Redis",
-          "Advanced search and filtering",
-          "Multiple payment gateway integration",
-          "Comprehensive admin analytics dashboard"
-        ]
-      }
-    }
+        status: "In Development",
+        completedDate: "Q1 2025",
+        featured: true,
+        type: "Frontend & CMS",
+        detailedInfo: {
+          challenge: "The client needed a platform to showcase blog posts, travel stories, and lifestyle content focused on Sri Lanka, with a modern look and the ability to easily manage content.",
+          solution: "Built a fully responsive blog using Next.js and integrated Sanity CMS for flexible content management. Designed for optimal performance and SEO with engaging UI/UX elements.",
+          results: [
+            "40% increase in user engagement within the first month",
+            "Fully editable content system for non-technical users",
+            "High Lighthouse scores in performance and SEO",
+            "Strong brand identity through customized visuals"
+          ],
+          timeline: "2 months",
+          teamSize: "2 Developer, 1 UI/UX Designer",
+          clientFeedback: "The blog looks stunning and is super fast. It's exactly what we needed to express our identity and connect with our readers.",
+          technicalHighlights: [
+            "Static site generation with Next.js",
+            "CMS-driven blog structure using Sanity",
+            "Image optimization and lazy loading",
+            "Tailwind CSS for utility-first styling",
+            "Smooth animations with Framer Motion"
+          ]
+        }
+}
+,
+    // {
+    //   id: 3,
+    //   title: "Cloud Migration Project",
+    //   description: "Complete infrastructure migration from on-premises to AWS cloud, ensuring zero downtime and enhanced scalability.",
+    //   category: "Cloud Services",
+    //   technologies: ["AWS", "Docker", "RDS", "CloudFormation", "Route 53"],
+    //   features: [
+    //     "Zero-downtime migration",
+    //     "Auto-scaling infrastructure",
+    //     "Database optimization",
+    //     "Backup and disaster recovery",
+    //     "Cost optimization"
+    //   ],
+    //   status: "Completed",
+    //   completedDate: "October 2024",
+    //   type: "Migration",
+    //   detailedInfo: {
+    //     challenge: "Migrate legacy on-premises infrastructure to AWS cloud while maintaining 24/7 uptime and improving performance and scalability.",
+    //     solution: "Executed a phased migration approach using AWS services, ensuring seamless transition with enhanced capabilities.",
+    //     results: [
+    //       "Zero downtime during migration",
+    //       "40% reduction in infrastructure costs",
+    //       "300% improvement in scalability",
+    //       "Enhanced disaster recovery capabilities"
+    //     ],
+    //     timeline: "4 months",
+    //     teamSize: "5 cloud engineers",
+    //     clientFeedback: "Seamless migration with immediate benefits. Our applications now run faster and more reliably than ever before.",
+    //     technicalHighlights: [
+    //       "Phased migration strategy",
+    //       "Auto-scaling EC2 instances",
+    //       "RDS database optimization",
+    //       "CloudFront CDN implementation",
+    //       "Automated backup and disaster recovery"
+    //     ]
+    //   }
+    // },
+    // {
+    //   id: 4,
+    //   title: "E-commerce Platform",
+    //   description: "Custom e-commerce solution with advanced inventory management, payment processing, and analytics dashboard.",
+    //   category: "E-commerce",
+    //   technologies: ["React", "Node.js", "PostgreSQL", "Redis", "Stripe"],
+    //   features: [
+    //     "Inventory management",
+    //     "Multi-payment gateway",
+    //     "Real-time analytics",
+    //     "Mobile responsive",
+    //     "Admin dashboard"
+    //   ],
+    //   status: "In Development",
+    //   completedDate: "Q1 2025",
+    //   type: "Web Application",
+    //   detailedInfo: {
+    //     challenge: "Build a comprehensive e-commerce platform that can handle high traffic, complex inventory management, and provide real-time analytics for business decisions.",
+    //     solution: "Developing a scalable e-commerce solution with modern technologies and best practices for performance and user experience.",
+    //     results: [
+    //       "Expected to handle 10,000+ concurrent users",
+    //       "Real-time inventory tracking",
+    //       "Advanced analytics and reporting",
+    //       "Mobile-first responsive design"
+    //     ],
+    //     timeline: "5 months",
+    //     teamSize: "6 developers",
+    //     clientFeedback: "Early preview looks amazing! The admin dashboard provides insights we never had before.",
+    //     technicalHighlights: [
+    //       "Microservices architecture",
+    //       "Real-time data processing with Redis",
+    //       "Advanced search and filtering",
+    //       "Multiple payment gateway integration",
+    //       "Comprehensive admin analytics dashboard"
+    //     ]
+    //   }
+    // }
   ]
 
   const categories = ["All", "Web Application", "Infrastructure", "Migration", "E-commerce"]
@@ -244,7 +246,7 @@ export default function ProjectsPage() {
               className="text-center max-w-4xl mx-auto mb-12"
             >
               <Badge className="mb-4 rounded-full px-4 py-1.5 text-sm font-medium" variant="secondary">
-                🚀 Our Portfolio
+                 Our Portfolio
               </Badge>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6 bg-clip-text text-transparent bg-gradient-to-r from-foreground to-foreground/70">
                 Innovative Solutions That Drive Success
@@ -267,7 +269,7 @@ export default function ProjectsPage() {
         </section>
 
         {/* Project Categories Filter */}
-        <section className="w-full py-12 border-b border-border/40">
+        {/* <section className="w-full py-12 border-b border-border/40">
           <div className="container px-4 md:px-6">
             <Tabs value={selectedCategory} onValueChange={setSelectedCategory} className="w-full">
               <TabsList className="grid w-full grid-cols-5 max-w-2xl mx-auto rounded-full bg-muted/50">
@@ -283,7 +285,7 @@ export default function ProjectsPage() {
               </TabsList>
             </Tabs>
           </div>
-        </section>
+        </section> */}
 
         {/* Featured Project - Mihith Lanka Tours */}
         {selectedCategory === "All" || selectedCategory === "Web Application" ? (

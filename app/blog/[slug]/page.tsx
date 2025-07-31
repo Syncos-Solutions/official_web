@@ -13,13 +13,16 @@ import {
   Bookmark,
   ThumbsUp,
   MessageCircle,
-  ArrowUp
+  ArrowUp,
+  Copy,
+  Check
 } from "lucide-react"
 import { Button } from "../../../components/ui/button"
 import { Badge } from "../../../components/ui/badge"
 import { Card, CardContent } from "../../../components/ui/card"
+import Footer from "../../../components/Footer"
 
-// Blog data (in real app, fetch from API or CMS)
+// Blog data (same as original)
 const blogData = {
   "devops-automation-2024": {
     title: "The Future of DevOps: Automation Trends in 2024",
@@ -1208,7 +1211,6 @@ The key is to start with quick wins, establish proper monitoring, and gradually 
 }
 
 
-
 const relatedPosts = [
   {
     slug: "kubernetes-vs-docker-swarm",
@@ -1236,12 +1238,221 @@ interface BlogPostPageProps {
   }
 }
 
+// Custom component to render blog content with proper styling
+const BlogContent = ({ content }: { content: string }) => {
+  const [copiedCode, setCopiedCode] = useState<string | null>(null)
+
+  const copyToClipboard = (text: string, id: string) => {
+    navigator.clipboard.writeText(text)
+    setCopiedCode(id)
+    setTimeout(() => setCopiedCode(null), 2000)
+  }
+
+  // Split content into sections for better rendering
+  const renderContent = (text: string) => {
+    const lines = text.split('\n')
+    const elements: JSX.Element[] = []
+    let currentSection: string[] = []
+    let inCodeBlock = false
+    let codeBlockContent: string[] = []
+    let codeBlockLang = ''
+
+    lines.forEach((line, index) => {
+      // Handle code blocks
+      if (line.startsWith('```')) {
+        if (!inCodeBlock) {
+          // Start code block
+          inCodeBlock = true
+          codeBlockLang = line.replace('```', '') || 'text'
+          codeBlockContent = []
+          
+          // Render current section before code block
+          if (currentSection.length > 0) {
+            elements.push(
+              <div key={`section-${index}`} className="mb-8">
+                {renderTextSection(currentSection.join('\n'))}
+              </div>
+            )
+            currentSection = []
+          }
+        } else {
+          // End code block
+          inCodeBlock = false
+          const codeId = `code-${index}`
+          elements.push(
+            <div key={`code-${index}`} className="mb-8">
+              <div className="relative group">
+                <div className="flex items-center justify-between bg-gray-800 dark:bg-gray-900 text-gray-300 px-4 py-2 rounded-t-lg text-sm font-mono">
+                  <span className="text-gray-400">{codeBlockLang}</span>
+                  <button
+                    onClick={() => copyToClipboard(codeBlockContent.join('\n'), codeId)}
+                    className="opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex items-center gap-1 text-gray-400 hover:text-white"
+                  >
+                    {copiedCode === codeId ? (
+                      <>
+                        <Check className="w-4 h-4" />
+                        <span className="text-xs">Copied!</span>
+                      </>
+                    ) : (
+                      <>
+                        <Copy className="w-4 h-4" />
+                        <span className="text-xs">Copy</span>
+                      </>
+                    )}
+                  </button>
+                </div>
+                <pre className="bg-gray-900 dark:bg-gray-950 text-gray-100 p-4 rounded-b-lg overflow-x-auto">
+                  <code className="text-sm font-mono leading-relaxed">
+                    {codeBlockContent.join('\n')}
+                  </code>
+                </pre>
+              </div>
+            </div>
+          )
+          codeBlockContent = []
+        }
+        return
+      }
+
+      if (inCodeBlock) {
+        codeBlockContent.push(line)
+        return
+      }
+
+      currentSection.push(line)
+    })
+
+    // Render remaining section
+    if (currentSection.length > 0) {
+      elements.push(
+        <div key="final-section" className="mb-8">
+          {renderTextSection(currentSection.join('\n'))}
+        </div>
+      )
+    }
+
+    return elements
+  }
+
+  const renderTextSection = (text: string) => {
+    const lines = text.split('\n')
+    const elements: JSX.Element[] = []
+    let currentParagraph: string[] = []
+
+    lines.forEach((line, index) => {
+      const trimmedLine = line.trim()
+
+      // Handle headers
+      if (trimmedLine.startsWith('## ')) {
+        if (currentParagraph.length > 0) {
+          elements.push(renderParagraph(currentParagraph.join('\n'), index))
+          currentParagraph = []
+        }
+        elements.push(
+          <h2 key={`h2-${index}`} className="text-2xl md:text-3xl font-bold text-foreground mb-6 mt-12 first:mt-0 scroll-mt-24">
+            {trimmedLine.replace('## ', '')}
+          </h2>
+        )
+      } else if (trimmedLine.startsWith('### ')) {
+        if (currentParagraph.length > 0) {
+          elements.push(renderParagraph(currentParagraph.join('\n'), index))
+          currentParagraph = []
+        }
+        elements.push(
+          <h3 key={`h3-${index}`} className="text-xl md:text-2xl font-semibold text-foreground mb-4 mt-8 scroll-mt-24">
+            {trimmedLine.replace('### ', '')}
+          </h3>
+        )
+      } else if (trimmedLine.startsWith('#### ')) {
+        if (currentParagraph.length > 0) {
+          elements.push(renderParagraph(currentParagraph.join('\n'), index))
+          currentParagraph = []
+        }
+        elements.push(
+          <h4 key={`h4-${index}`} className="text-lg md:text-xl font-semibold text-foreground mb-3 mt-6 scroll-mt-24">
+            {trimmedLine.replace('#### ', '')}
+          </h4>
+        )
+      } else if (trimmedLine.startsWith('- ')) {
+        // Handle list items
+        if (currentParagraph.length > 0) {
+          elements.push(renderParagraph(currentParagraph.join('\n'), index))
+          currentParagraph = []
+        }
+        
+        // Collect all consecutive list items
+        const listItems = [trimmedLine]
+        let nextIndex = index + 1
+        while (nextIndex < lines.length && lines[nextIndex].trim().startsWith('- ')) {
+          listItems.push(lines[nextIndex].trim())
+          nextIndex++
+        }
+        
+        elements.push(
+          <ul key={`ul-${index}`} className="list-none space-y-3 mb-6 ml-4">
+            {listItems.map((item, i) => (
+              <li key={i} className="flex items-start gap-3 text-muted-foreground leading-relaxed">
+                <div className="w-2 h-2 rounded-full bg-primary/60 mt-2.5 flex-shrink-0"></div>
+                <span>{item.replace('- ', '')}</span>
+              </li>
+            ))}
+          </ul>
+        )
+        
+        // Skip the processed lines
+        index = nextIndex - 1
+      } else if (trimmedLine === '') {
+        if (currentParagraph.length > 0) {
+          elements.push(renderParagraph(currentParagraph.join('\n'), index))
+          currentParagraph = []
+        }
+      } else {
+        currentParagraph.push(line)
+      }
+    })
+
+    // Handle remaining paragraph
+    if (currentParagraph.length > 0) {
+      elements.push(renderParagraph(currentParagraph.join('\n'), elements.length))
+    }
+
+    return elements
+  }
+
+  const renderParagraph = (text: string, key: number) => {
+    if (!text.trim()) return null
+
+    // Handle bold text **text**
+    const formatText = (str: string) => {
+      return str.split(/(\*\*[^*]+\*\*)/).map((part, i) => {
+        if (part.startsWith('**') && part.endsWith('**')) {
+          return (
+            <strong key={i} className="font-semibold text-foreground">
+              {part.slice(2, -2)}
+            </strong>
+          )
+        }
+        return part
+      })
+    }
+
+    return (
+      <p key={`p-${key}`} className="text-muted-foreground leading-relaxed mb-6 text-[15px] md:text-base">
+        {formatText(text)}
+      </p>
+    )
+  }
+
+  return <div className="space-y-0">{renderContent(content)}</div>
+}
+
 export default function BlogPostPage({ params }: BlogPostPageProps) {
   const [isScrolled, setIsScrolled] = useState(false)
   const [liked, setLiked] = useState(false)
   const [bookmarked, setBookmarked] = useState(false)
+  const [urlCopied, setUrlCopied] = useState(false)
   
-  const blog = blogData[params.slug as keyof typeof blogData]
+  const blog = blogData[params.slug as keyof typeof blogData] || blogData["devops-automation-2024"]
 
   useEffect(() => {
     const handleScroll = () => {
@@ -1251,30 +1462,39 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
-  if (!blog) {
-    return (
-      <div className="min-h-screen bg-background flex items-center justify-center">
-        <div className="text-center">
-          <h1 className="text-2xl font-bold mb-4">Blog Post Not Found</h1>
-          <Link href="/blog">
-            <Button>Back to Blog</Button>
-          </Link>
-        </div>
-      </div>
-    )
-  }
-
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }
 
+  const handleShare = async () => {
+    try {
+      const currentUrl = window.location.href
+      await navigator.clipboard.writeText(currentUrl)
+      setUrlCopied(true)
+      setTimeout(() => setUrlCopied(false), 2000)
+    } catch (err) {
+      console.error('Failed to copy URL:', err)
+      // Fallback for older browsers
+      const textArea = document.createElement('textarea')
+      textArea.value = window.location.href
+      document.body.appendChild(textArea)
+      textArea.select()
+      document.execCommand('copy')
+      document.body.removeChild(textArea)
+      setUrlCopied(true)
+      setTimeout(() => setUrlCopied(false), 2000)
+    }
+  }
+
   return (
-    <div className="min-h-screen bg-gradient-to-br from-background via-muted/20 to-background">
+    <div className="min-h-screen bg-background">
       {/* Navigation Bar */}
       <motion.nav
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
-        className={`sticky top-0 z-50 mt-6 w-full backdrop-blur-lg transition-all duration-300 ${isScrolled ? "bg-background/80 shadow-sm border-b border-border/40" : "bg-transparent"}`}
+        className={`sticky top-0 z-50 w-full backdrop-blur-lg transition-all duration-300 ${
+          isScrolled ? "bg-background/95 shadow-sm border-b border-border/40" : "bg-transparent"
+        }`}
       >
         <div className="container px-4 md:px-6 py-4">
           <div className="flex items-center justify-between">
@@ -1285,7 +1505,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
               </Button>
             </Link>
             
-            <div className="flex items-center gap-4">
+            <div className="flex items-center gap-2">
               <Button
                 variant="ghost"
                 size="icon"
@@ -1294,8 +1514,22 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
               >
                 <Bookmark className="w-4 h-4" />
               </Button>
-              <Button variant="ghost" size="icon">
-                <Share2 className="w-4 h-4" />
+              <Button 
+                variant="ghost" 
+                size="icon"
+                onClick={handleShare}
+                className="relative"
+              >
+                {urlCopied ? (
+                  <Check className="w-4 h-4 text-green-500" />
+                ) : (
+                  <Share2 className="w-4 h-4" />
+                )}
+                {urlCopied && (
+                  <span className="absolute -top-8 left-1/2 transform -translate-x-1/2 bg-foreground text-background text-xs px-2 py-1 rounded whitespace-nowrap">
+                    URL Copied!
+                  </span>
+                )}
               </Button>
             </div>
           </div>
@@ -1304,51 +1538,40 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
 
       {/* Article Header */}
       <article className="w-full">
-        <header className="w-full py-12 md:py-20 relative overflow-hidden">
-          <div className="absolute inset-0 -z-10">
-            <div className="absolute top-20 right-20 w-64 h-64 bg-primary/10 rounded-full blur-3xl animate-pulse"></div>
-            <div className="absolute bottom-20 left-20 w-80 h-80 bg-secondary/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
-          </div>
-
+        <header className="w-full py-12 md:py-16 relative">
           <div className="container px-4 md:px-6 relative">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="max-w-4xl mx-auto text-center"
+              className="max-w-4xl mx-auto"
             >
-              {/* Category and Featured Badge */}
-              {/* <div className="flex items-center justify-center gap-4 mb-6">
+              {/* Category Badge */}
+              <div className="flex items-center justify-center mb-6">
                 <Badge className="px-4 py-2 bg-primary/10 text-primary border-primary/20" variant="outline">
                   {blog.category}
                 </Badge>
-                {blog.featured && (
-                  <Badge className="px-3 py-1 bg-yellow-100 dark:bg-yellow-900/30 text-yellow-700 dark:text-yellow-300 border-yellow-200 dark:border-yellow-800">
-                    <Star className="w-3 h-3 mr-1 fill-current" />
-                    Featured
-                  </Badge>
-                )}
-              </div> */}
+              </div>
 
               {/* Title */}
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight mb-6 bg-clip-text text-transparent bg-gradient-to-r from-foreground via-primary to-foreground">
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-center mb-6 text-foreground leading-tight">
                 {blog.title}
               </h1>
 
               {/* Excerpt */}
-              <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed">
+              <p className="text-lg md:text-xl text-muted-foreground text-center mb-8 max-w-3xl mx-auto leading-relaxed">
                 {blog.excerpt}
               </p>
 
               {/* Meta Info */}
-              <div className="flex flex-wrap items-center justify-center gap-6 text-sm text-muted-foreground">
+              <div className="flex flex-wrap items-center justify-center gap-6 text-sm text-muted-foreground border-b border-border/40 pb-8">
                 <div className="flex items-center gap-2">
                   <div className="size-10 rounded-full bg-primary/10 flex items-center justify-center text-primary font-medium">
                     {blog.author.avatar}
                   </div>
                   <div className="text-left">
                     <p className="font-medium text-foreground">{blog.author.name}</p>
-                    <p className="text-xs">{blog.author.role}</p>
+                    {blog.author.role && <p className="text-xs">{blog.author.role}</p>}
                   </div>
                 </div>
                 <div className="flex items-center gap-1">
@@ -1362,7 +1585,9 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
                 <div className="flex items-center gap-4">
                   <button 
                     onClick={() => setLiked(!liked)}
-                    className={`flex items-center gap-1 transition-colors ${liked ? 'text-red-500' : 'hover:text-red-500'}`}
+                    className={`flex items-center gap-1 transition-colors hover:text-primary ${
+                      liked ? 'text-primary' : ''
+                    }`}
                   >
                     <ThumbsUp className={`w-4 h-4 ${liked ? 'fill-current' : ''}`} />
                     {blog.likes + (liked ? 1 : 0)}
@@ -1377,7 +1602,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
               {/* Tags */}
               <div className="flex flex-wrap justify-center gap-2 mt-6">
                 {blog.tags.map((tag, i) => (
-                  <span key={i} className="px-3 py-1 text-xs bg-secondary/50 text-secondary-foreground rounded-full">
+                  <span key={i} className="px-3 py-1 text-xs bg-muted text-muted-foreground rounded-full hover:bg-muted/80 transition-colors">
                     #{tag}
                   </span>
                 ))}
@@ -1394,57 +1619,31 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
-                className="prose prose-lg dark:prose-invert max-w-none"
+                className="bg-background"
               >
-                <Card className="p-8 border-border/40 bg-gradient-to-b from-background to-muted/10 backdrop-blur-sm">
-                  <CardContent className="p-0">
-                    <div className="whitespace-pre-line leading-relaxed">
-                      {blog.content}
-                    </div>
-                  </CardContent>
-                </Card>
-              </motion.div>
-
-              {/* Author Bio */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.4 }}
-                className="mt-12"
-              >
-                <Card className="p-6 border-border/40 bg-gradient-to-r from-primary/5 to-secondary/5 backdrop-blur-sm">
-                  <CardContent className="p-0">
-                    <div className="flex items-start gap-4">
-                      <div className="size-16 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold text-xl">
-                        {blog.author.avatar}
-                      </div>
-                      <div className="flex-1">
-                        <h3 className="font-medium  text-lg mb-1">{blog.author.name}</h3>
-                        <p className="text-muted-foreground text-sm mb-2">{blog.author.role}</p>
-                        <p className="text-muted-foreground leading-relaxed">{blog.author.bio}</p>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
+                {/* Main Content Area */}
+                <div className="bg-background border border-border/40 rounded-lg p-8 md:p-12 shadow-sm">
+                  <BlogContent content={blog.content} />
+                </div>
               </motion.div>
 
               {/* Related Posts */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.6 }}
+                transition={{ duration: 0.6, delay: 0.4 }}
                 className="mt-16"
               >
-                <h3 className="text-2xl font-bold mb-8 text-center">Related Articles</h3>
+                <h3 className="text-2xl font-bold mb-8 text-center text-foreground">Related Articles</h3>
                 <div className="grid gap-6 md:grid-cols-3">
                   {relatedPosts.map((post, i) => (
                     <Link key={i} href={`/blog/${post.slug}`}>
-                      <Card className="h-full border-border/40 bg-gradient-to-b from-background to-muted/10 backdrop-blur-sm hover:shadow-md transition-all duration-300 group cursor-pointer">
+                      <Card className="h-full border-border/40 bg-background hover:shadow-md transition-all duration-300 group cursor-pointer">
                         <CardContent className="p-6">
                           <Badge className="mb-3 bg-primary/10 text-primary" variant="outline">
                             {post.category}
                           </Badge>
-                          <h4 className="font-bold mb-2 group-hover:text-primary transition-colors duration-300">
+                          <h4 className="font-semibold mb-2 group-hover:text-primary transition-colors duration-300 leading-snug">
                             {post.title}
                           </h4>
                           <p className="text-sm text-muted-foreground flex items-center gap-1">
@@ -1460,6 +1659,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
             </div>
           </div>
         </section>
+        <Footer />
       </article>
 
       {/* Scroll to Top Button */}

@@ -18,6 +18,7 @@ import {
   Globe,
   Clock
 } from "lucide-react"
+import Link from "next/link"
 
 const AboutSection = () => {
   const container = {
@@ -40,27 +41,6 @@ const AboutSection = () => {
     { number: "20+", label: "Happy Clients", icon: <Users className="w-5 h-5" /> },
     { number: "99.9%", label: "Uptime Guarantee", icon: <TrendingUp className="w-5 h-5" /> },
     { number: "24/7", label: "Expert Support", icon: <Clock className="w-5 h-5" /> }
-  ]
-
-  const values = [
-    {
-      icon: <Zap className="w-6 h-6" />,
-      title: "Innovation First",
-      description: "We stay ahead of technology trends to deliver cutting-edge solutions that give you a competitive advantage in the digital landscape.",
-      gradient: "from-blue-500/10 to-cyan-500/10"
-    },
-    {
-      icon: <Users className="w-6 h-6" />,
-      title: "Client Partnership", 
-      description: "Your success is our success. We work closely with you to understand your unique needs and deliver tailored solutions that exceed expectations.",
-      gradient: "from-purple-500/10 to-pink-500/10"
-    },
-    {
-      icon: <Shield className="w-6 h-6" />,
-      title: "Security & Reliability",
-      description: "We maintain the highest standards of security and reliability in every project, ensuring your data and systems are protected around the clock.",
-      gradient: "from-green-500/10 to-emerald-500/10"
-    }
   ]
 
   const achievements = [
@@ -100,7 +80,7 @@ const AboutSection = () => {
           className="text-center mb-16"
         >
           <Badge className="mb-4 rounded-full px-4 py-1.5 text-sm font-medium" variant="secondary">
-            About Syncos Solutions
+            About Us
           </Badge>
           <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-6 bg-clip-text text-transparent bg-gradient-to-r from-foreground to-foreground/70">
             Innovating Tomorrow's Technology Today
@@ -165,109 +145,113 @@ const AboutSection = () => {
             </motion.div>
           </motion.div>
 
-{/* Right Content - Orbiting Technologies */}
-            <motion.div
-                initial={{ opacity: 0, x: 30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.3 }}
-                className="flex items-center justify-center"
-              >
-                <div className="relative flex h-[500px] w-full max-w-[500px] items-center justify-center overflow-hidden">
-
-                  {/* Orbit 1 - Inner circle */}
-                  <div className="tech-orbit-container orbit-1">
-                    <div className="absolute h-[200px] w-[200px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-border/20" />
-
-                    {[
-                      { icon: "react", angle: 0 },
-                      { icon: "nodejs", angle: 90 },
-                      { icon: "docker", angle: 180 },
-                      { icon: "typescript", angle: 270 },
-                    ].map(({ icon, angle }, index) => (
-                      <div
-                        key={`orbit1-${index}`}
-                        className="tech-orbit-icon"
-                      >
-                        <div
-                          className="absolute flex h-10 w-10 items-center justify-center rounded-full bg-card border border-border/40 backdrop-blur-sm hover:shadow-lg transition-all duration-300"
-                          style={{
-                            transform: `rotate(${angle}deg) translateX(100px) rotate(-${angle}deg)`,
-                          }}
-                        >
-                          <img
-                            src={`https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${icon}/${icon}-original.svg`}
-                            alt={icon}
-                            className="w-5 h-5"
-                          />
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-
-                  {/* Orbit 2 - Middle circle */}
-                  <div className="tech-orbit-container orbit-2">
-                    <div className="absolute h-[300px] w-[300px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-border/20" />
-
-                    {[
-                      { icon: "amazonwebservices/amazonwebservices-original-wordmark", angle: 0 },
-                      { icon: "kubernetes/kubernetes-plain", angle: 60 },
-                      { icon: "postgresql/postgresql-original", angle: 120 },
-                      { icon: "mongodb/mongodb-original", angle: 180 },
-                      { icon: "redis/redis-original", angle: 240 },
-                      { icon: "graphql/graphql-plain", angle: 300 },
-                    ].map(({ icon, angle }, index) => (
-                      <div
-                        key={`orbit2-${index}`}
-                        className="tech-orbit-icon"
-                      >
-                        <div
-                          className="absolute flex h-10 w-10 items-center justify-center rounded-full bg-card border border-border/40 backdrop-blur-sm hover:shadow-lg transition-all duration-300"
-                          style={{
-                            transform: `rotate(${angle}deg) translateX(150px) rotate(-${angle}deg)`,
-                          }}
-                        >
-                          <img
-                            src={`https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${icon}.svg`}
-                            alt={icon.split('/').pop()}
-                            className="w-5 h-5"
-                          />
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-
-                  {/* Orbit 3 - Outer circle */}
-                  <div className="tech-orbit-container orbit-3">
-                    <div className="absolute h-[400px] w-[400px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-border/20" />
-
-                    {[
-                      { icon: "terraform/terraform-original", angle: 0 },
-                      { icon: "grafana/grafana-original", angle: 90 },
-                      { icon: "jenkins/jenkins-original", angle: 180 },
-                      { icon: "nginx/nginx-original", angle: 270 },
-                    ].map(({ icon, angle }, index) => (
-                      <div
-                        key={`orbit3-${index}`}
-                        className="tech-orbit-icon"
-                      >
-                        <div
-                          className="absolute flex h-10 w-10 items-center justify-center rounded-full bg-card border border-border/40 backdrop-blur-sm hover:shadow-lg transition-all duration-300"
-                          style={{
-                            transform: `rotate(${angle}deg) translateX(200px) rotate(-${angle}deg)`,
-                          }}
-                        >
-                          <img
-                            src={`https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${icon}.svg`}
-                            alt={icon.split('/').pop()}
-                            className="w-5 h-5"
-                          />
-                        </div>
-                      </div>
-                    ))}
+          {/* Right Content - Orbiting Technologies */}
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="flex items-center justify-center"
+          >
+            <div className="relative flex h-[500px] w-full max-w-[500px] items-center justify-center overflow-hidden">
+              
+              {/* Central Hub */}
+              <div className="absolute inset-0 flex items-center justify-center z-30">
+                <div className="flex items-center justify-center w-20 h-20 bg-gradient-to-br from-primary/80 to-primary rounded-full shadow-2xl border-4 border-background">
+                  <div className="flex items-center justify-center w-12 h-12 bg-background rounded-full">
+                    <Zap className="w-6 h-6 text-primary" />
                   </div>
                 </div>
-              </motion.div>
+              </div>
+
+              {/* Orbit 1 - Inner circle */}
+              <div className="absolute inset-0 flex items-center justify-center animate-spin" style={{ animationDuration: '15s' }}>
+                <div className="absolute h-[200px] w-[200px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-border/20" />
+
+                {[
+                  { icon: "react", angle: 0 },
+                  { icon: "nodejs", angle: 90 },
+                  { icon: "docker", angle: 180 },
+                  { icon: "typescript", angle: 270 },
+                ].map(({ icon, angle }, index) => (
+                  <div
+                    key={`orbit1-${index}`}
+                    className="absolute"
+                    style={{
+                      transform: `rotate(${angle}deg) translateX(100px) rotate(-${angle}deg)`,
+                    }}
+                  >
+                    <div className="flex h-10 w-10 items-center justify-center rounded-full bg-card border border-border/40 backdrop-blur-sm hover:shadow-lg transition-all duration-300 animate-spin" style={{ animationDuration: '15s', animationDirection: 'reverse' }}>
+                      <img
+                        src={`https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${icon}/${icon}-original.svg`}
+                        alt={icon}
+                        className="w-5 h-5"
+                      />
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              {/* Orbit 2 - Middle circle */}
+              <div className="absolute inset-0 flex items-center justify-center animate-spin" style={{ animationDuration: '25s', animationDirection: 'reverse' }}>
+                <div className="absolute h-[300px] w-[300px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-border/20" />
+
+                {[
+                  { icon: "amazonwebservices/amazonwebservices-original-wordmark", angle: 0 },
+                  { icon: "kubernetes/kubernetes-plain", angle: 60 },
+                  { icon: "postgresql/postgresql-original", angle: 120 },
+                  { icon: "mongodb/mongodb-original", angle: 180 },
+                  { icon: "redis/redis-original", angle: 240 },
+                  { icon: "graphql/graphql-plain", angle: 300 },
+                ].map(({ icon, angle }, index) => (
+                  <div
+                    key={`orbit2-${index}`}
+                    className="absolute"
+                    style={{
+                      transform: `rotate(${angle}deg) translateX(150px) rotate(-${angle}deg)`,
+                    }}
+                  >
+                    <div className="flex h-10 w-10 items-center justify-center rounded-full bg-card border border-border/40 backdrop-blur-sm hover:shadow-lg transition-all duration-300 animate-spin" style={{ animationDuration: '25s' }}>
+                      <img
+                        src={`https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${icon}.svg`}
+                        alt={icon.split('/').pop()}
+                        className="w-5 h-5"
+                      />
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              {/* Orbit 3 - Outer circle */}
+              <div className="absolute inset-0 flex items-center justify-center animate-spin" style={{ animationDuration: '35s' }}>
+                <div className="absolute h-[400px] w-[400px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-border/20" />
+
+                {[
+                  { icon: "terraform/terraform-original", angle: 0 },
+                  { icon: "grafana/grafana-original", angle: 90 },
+                  { icon: "jenkins/jenkins-original", angle: 180 },
+                  { icon: "nginx/nginx-original", angle: 270 },
+                ].map(({ icon, angle }, index) => (
+                  <div
+                    key={`orbit3-${index}`}
+                    className="absolute"
+                    style={{
+                      transform: `rotate(${angle}deg) translateX(200px) rotate(-${angle}deg)`,
+                    }}
+                  >
+                    <div className="flex h-10 w-10 items-center justify-center rounded-full bg-card border border-border/40 backdrop-blur-sm hover:shadow-lg transition-all duration-300 animate-spin" style={{ animationDuration: '35s', animationDirection: 'reverse' }}>
+                      <img
+                        src={`https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${icon}.svg`}
+                        alt={icon.split('/').pop()}
+                        className="w-5 h-5"
+                      />
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+            </div>
+          </motion.div>
         </div>
 
         {/* Vision & Mission Cards */}
@@ -365,12 +349,12 @@ const AboutSection = () => {
               <div className="flex flex-col sm:flex-row gap-4 justify-center pt-6">
                 <Button size="lg" className="rounded-full h-12 px-8 bg-primary hover:bg-primary/90 text-primary-foreground group">
                   <span className="flex items-center gap-2">
-                    Get Free Consultation
+                    <Link href="/contact">Get Free Consultation</Link>
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
                   </span>
                 </Button>
                 <Button size="lg" variant="outline" className="rounded-full h-12 px-8 border-primary/30 hover:bg-primary/10">
-                  View Our Portfolio
+                 <Link href="/Projects"> View Our Portfolio </Link>
                 </Button>
               </div>
 

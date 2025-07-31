@@ -16,6 +16,8 @@ import {
 import { Button } from "../../components/ui/button"
 import { Badge } from "../../components/ui/badge"
 import { Card, CardContent } from "../../components/ui/card"
+import Footer from "../../components/Footer"
+// import Navbar from "../../components/Navbar"
 
 
 
@@ -29,9 +31,9 @@ const allBlogs = [
     readTime: "5 min read",
     date: "Dec 15, 2024",
     author: {
-      name: "Alex Kumar",
-      role: "Senior DevOps Engineer",
-      avatar: "AK"
+      name: "System",
+      // role: "Senior DevOps Engineer",
+      // avatar: "AK"
     },
     featured: true,
     tags: ["DevOps", "Automation", "CI/CD", "GitOps"]
@@ -44,9 +46,9 @@ const allBlogs = [
     readTime: "7 min read", 
     date: "Dec 12, 2024",
     author: {
-      name: "Sarah Chen", 
-      role: "Security Specialist",
-      avatar: "SC"
+      name: "System", 
+      // role: "Security Specialist",
+      // avatar: "SC"
     },
     tags: ["Security", "Cloud", "Compliance", "Enterprise"]
   },
@@ -58,9 +60,9 @@ const allBlogs = [
     readTime: "6 min read",
     date: "Dec 10, 2024", 
     author: {
-      name: "Mike Rodriguez",
-      role: "Infrastructure Architect", 
-      avatar: "MR"
+      name: "System",
+      // role: "Infrastructure Architect", 
+      // avatar: "MR"
     },
     tags: ["Kubernetes", "Docker", "Containers", "Infrastructure"]
   },
@@ -72,9 +74,9 @@ const allBlogs = [
     readTime: "8 min read",
     date: "Dec 8, 2024",
     author: {
-      name: "Lisa Wang",
-      role: "Monitoring Specialist",
-      avatar: "LW"
+      name: "System",
+      // role: "Monitoring Specialist",
+      // avatar: "LW"
     },
     tags: ["Monitoring", "Grafana", "Prometheus", "Observability"]
   },
@@ -86,9 +88,9 @@ const allBlogs = [
     readTime: "6 min read",
     date: "Dec 5, 2024",
     author: {
-      name: "David Park",
-      role: "Senior Developer",
-      avatar: "DP"
+      name: "System",
+      // role: "Senior Developer",
+      // avatar: "DP"
     },
     tags: ["API", "REST", "GraphQL", "Architecture"]
   },
@@ -100,9 +102,9 @@ const allBlogs = [
     readTime: "5 min read",
     date: "Dec 3, 2024",
     author: {
-      name: "Emma Thompson",
-      role: "Cloud Architect",
-      avatar: "ET"
+      name: "System",
+      // role: "Cloud Architect",
+      // avatar: "ET"
     },
     tags: ["AWS", "Cost Optimization", "Cloud", "FinOps"]
   }
@@ -137,6 +139,7 @@ export default function BlogPage() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-background via-muted/30 to-background">
+      {/* <Navbar /> */}
       {/* Blog Hero Section */}
       <section className="w-full py-15 mt-8 md:py-30 relative overflow-hidden">
         <div className="absolute inset-0 -z-10">
@@ -325,7 +328,7 @@ export default function BlogPage() {
           )}
 
           {/* Newsletter Signup */}
-          <motion.div
+          {/* <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -353,9 +356,10 @@ export default function BlogPage() {
                 </p>
               </CardContent>
             </Card>
-          </motion.div>
+          </motion.div> */}
         </div>
       </section>
+      <Footer />
     </div>
   )
 }

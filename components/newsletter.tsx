@@ -206,7 +206,7 @@ export default function Newsletter() {
   }
 
   return (
-    <Card className="w-full border-border/40 bg-gradient-to-br from-background to-muted/10 backdrop-blur-sm hover:shadow-lg transition-all duration-300">
+    <Card id="newsletter" className="w-full border-border/40 bg-gradient-to-br from-background to-muted/10 backdrop-blur-sm hover:shadow-lg transition-all duration-300">
       <CardContent className="p-6">
         <div className="space-y-4">
           <div className="space-y-2">
