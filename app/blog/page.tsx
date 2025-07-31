@@ -33,7 +33,7 @@ const allBlogs = [
     author: {
       name: "System",
       // role: "Senior DevOps Engineer",
-      // avatar: "AK"
+       avatar: "S"
     },
     featured: true,
     tags: ["DevOps", "Automation", "CI/CD", "GitOps"]
@@ -48,7 +48,7 @@ const allBlogs = [
     author: {
       name: "System", 
       // role: "Security Specialist",
-      // avatar: "SC"
+       avatar: "S"
     },
     tags: ["Security", "Cloud", "Compliance", "Enterprise"]
   },
@@ -62,7 +62,7 @@ const allBlogs = [
     author: {
       name: "System",
       // role: "Infrastructure Architect", 
-      // avatar: "MR"
+       avatar: "S"
     },
     tags: ["Kubernetes", "Docker", "Containers", "Infrastructure"]
   },
@@ -76,7 +76,7 @@ const allBlogs = [
     author: {
       name: "System",
       // role: "Monitoring Specialist",
-      // avatar: "LW"
+       avatar: "S"
     },
     tags: ["Monitoring", "Grafana", "Prometheus", "Observability"]
   },
@@ -90,7 +90,7 @@ const allBlogs = [
     author: {
       name: "System",
       // role: "Senior Developer",
-      // avatar: "DP"
+       avatar: "S"
     },
     tags: ["API", "REST", "GraphQL", "Architecture"]
   },
@@ -104,7 +104,7 @@ const allBlogs = [
     author: {
       name: "System",
       // role: "Cloud Architect",
-      // avatar: "ET"
+       avatar: "S"
     },
     tags: ["AWS", "Cost Optimization", "Cloud", "FinOps"]
   }
@@ -288,7 +288,7 @@ export default function BlogPage() {
                           </div>
                           <div>
                             <p className="font-medium text-sm">{blog.author.name}</p>
-                            <p className="text-xs text-muted-foreground">{blog.author.role}</p>
+                            {/* <p className="text-xs text-muted-foreground">{blog.author.role}</p> */}
                           </div>
                         </div>
                         <div className="text-right">
