@@ -1526,7 +1526,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
                   <Share2 className="w-4 h-4" />
                 )}
                 {urlCopied && (
-                  <span className="absolute -top-8 left-1/2 transform -translate-x-1/2 bg-foreground text-background text-xs px-2 py-1 rounded whitespace-nowrap">
+                  <span className="absolute top-8 left-1/2 transform -translate-x-1/2 bg-foreground text-background text-xs px-2 py-1 rounded whitespace-nowrap">
                     URL Copied!
                   </span>
                 )}
@@ -1548,13 +1548,13 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
             >
               {/* Category Badge */}
               <div className="flex items-center justify-center mb-6">
-                <Badge className="px-4 py-2 bg-primary/10 text-primary border-primary/20" variant="outline">
+                <Badge className="mb-4 rounded-full px-4 py-1.5 text-sm font-medium" variant="secondary">
                   {blog.category}
                 </Badge>
               </div>
 
               {/* Title */}
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-center mb-6 text-foreground leading-tight">
+              <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-6 bg-clip-text text-transparent bg-gradient-to-r from-foreground via-primary to-foreground">
                 {blog.title}
               </h1>
 
