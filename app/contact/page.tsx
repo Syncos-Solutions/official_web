@@ -583,7 +583,7 @@ export default function ContactUsPage() {
                                 placeholder="Tell us about your project requirements, current challenges, and goals. The more details you provide, the better we can tailor our solution to your needs."
                                 value={formData.message}
                                 onChange={handleInputChange}
-                                className="rounded-xl border-slate-200/60 dark:border-slate-700/60 focus:border-blue-500/60 focus:ring-blue-500/20 transition-all duration-300 min-h-[170px] resize-none"
+                                className="rounded-xl border-slate-200/60 dark:border-slate-700/60 focus:border-blue-500/60 focus:ring-blue-500/20 transition-all duration-300 h-[170px] resize-none"
                                 required
                               />
                             </div>
