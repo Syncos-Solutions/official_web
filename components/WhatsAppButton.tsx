@@ -133,7 +133,7 @@ const WhatsAppButton = ({
                   </div>
                   {/* Arrow */}
                   <div
-                    className={`absolute w-2 h-2 bg-white dark:bg-gray-800 border-r border-b border-gray-200 dark:border-gray-600 ${getTooltipArrow()}`}
+                    className={`absolute w-2 h-2 bg-white  dark:bg-gray-800 border-r border-b border-gray-200 dark:border-gray-600 ${getTooltipArrow()}`}
                   />
                 </div>
               </motion.div>
