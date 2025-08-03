@@ -3,6 +3,7 @@ import "./globals.css"
 import { Inter } from "next/font/google"
 import type { Metadata } from "next"
 import { ThemeProvider } from "../components/theme-provider"
+import  WhatsAppButton  from "../components/WhatsAppButton"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -32,6 +33,12 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           {children}
+          <WhatsAppButton 
+            phoneNumber="1234567890" // Replace with your actual WhatsApp number (country code + number)
+            message="Hello! I'm interested in your IT services. Can you help me?"
+            position="bottom-left"
+            showTooltip={true}
+          />
         </ThemeProvider>
       </body>
     </html>

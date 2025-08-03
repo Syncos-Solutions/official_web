@@ -436,10 +436,10 @@ export default function LandingPage() {
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.3 }}
+                transition={{ duration: 0.6, delay: 0.7 }}
                 className="text-center"
               >
-                <Card className="inline-block p-8 border-border/40 bg-gradient-to-r from-background to-muted/20 backdrop-blur-sm">
+                <Card className=" p-8 border-border/60 bg-gradient-to-r from-background   to-muted/20 backdrop-blur-sm">
                   <CardContent className="p-0 space-y-6">
                     <div className="space-y-2">
                       <h3 className="text-2xl font-bold text-foreground">Explore Our Complete Blog</h3>

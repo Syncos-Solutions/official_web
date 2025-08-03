@@ -209,17 +209,16 @@ export default function Newsletter() {
     <Card id="newsletter" className="w-full border-border/40 bg-gradient-to-br from-background to-muted/10 backdrop-blur-sm hover:shadow-lg transition-all duration-300">
       <CardContent className="p-6">
         <div className="space-y-4">
-          <div className="space-y-2">
+          <div className="space-y-2 mb-8">
             <div className="flex items-center gap-2 mb-3">
               <div className="p-2 rounded-full bg-primary/10 ">
                 <Mail className="size-4 text-primary" />
               </div>
               <h3 className="text-lg font-bold">Stay Updated with Syncos Solutions</h3>
             </div>
-            <p className="text-xs text-muted-foreground leading-relaxed ">
-              Join 2,500+ tech professionals getting weekly DevOps insights, cloud strategies, 
-              and industry updates delivered straight to your inbox.
-            </p>
+             <p className="text-xs text-muted-foreground leading-relaxed ">
+              Join, weekly industry updates delivered straight to your inbox.
+            </p> 
           </div>
 
           <form onSubmit={handleSubmit} className="space-y-3 gap-5">
